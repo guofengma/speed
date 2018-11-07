@@ -1,0 +1,50 @@
+body{
+    background-color: rgba(242, 242, 242, 1);
+}
+.header_title_box{
+    background-color: rgba(30, 130, 210, 1);
+    position: relative;
+    .header_title{
+        height: 1.066667rem;
+        line-height: 1.066667rem;
+        font-size: .426667rem;
+        color: #fff;
+        text-align: center;
+    }
+    .header_back{
+        position: absolute;
+        height: 1.066667rem;
+        width: 1.066667rem;
+        left: 0;
+        top: 0;
+    }
+    .header_back::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 11px;
+        height: 18px;
+        background-size: 100% 100%;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAASCAYAAACNdSR1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADLSURBVDhPjZKxDcIwEEURYggKBqBkAAagoEzBCJSUbEBBwRgUDENJwQAUIAUpZaQzz+dzYWIrftLpLvnPVqx4MoZzbi0id9/tVR6kLdUhOnprr4cQNlRvYu+fLUoh2NWKBy95mDtqY1HKv0jLH4rwFDQV37SieAmaii/a0qIUwnPQRkSYUoswKh/qG8YM7DRjx5tuDcwP2tziIYR+wVVtYH7Sip+jINUdNJJZsLIoD8JRbWBB+edEkOr+ZgRpT8ULVb6iESR/VVsRaX5uvywpzZFGeQAAAABJRU5ErkJggg==');
+    }
+}
+.perfection_personal_info_box{
+    padding-top: 2.666667rem;
+    text-align: center;
+    .perfection_personal_greeting{
+        font-size: .426667rem;
+        line-height: 1.066667rem;
+    }
+    .perfection_personal_info{
+        margin: 2.4rem auto 0 auto;
+        font-size: .426667rem;
+        width: 3.733333rem;
+        height: 1.066667rem;
+        line-height: 1.066667rem;
+        color: #fff;
+        border-radius: .133333rem;
+        background-color: rgba(30, 130, 210, 1);
+    }
+}

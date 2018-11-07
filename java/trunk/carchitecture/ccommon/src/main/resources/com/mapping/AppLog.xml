@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.dao.AppLogDao">
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="主键" parameterType="com.speed.model.AppLog">
+		INSERT INTO APP_LOG (
+			主键, 创建时间, 操作IP, 日志内容, 日志类型, 用户ID
+		) VALUES (
+			#{主键}, #{创建时间}, #{操作ip}, #{日志内容}, #{日志类型}, #{用户id}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="com.speed.model.AppLog">
+		DELETE FROM APP_LOG <include refid="CriteriaSQL" />
+	</delete>
+
+	<update id="update" parameterType="com.speed.model.AppLog">
+		UPDATE APP_LOG <include refid="SetSQL" /> <include refid="CriteriaSQL" />
+	</update>
+  
+	<select id="selectCount" parameterType="com.speed.model.AppLog" resultType="_long">
+		SELECT COUNT(1) FROM APP_LOG <include refid="CriteriaSQL" />
+	</select>
+
+	<select id="selectList" parameterType="com.speed.model.AppLog" resultMap="AppLogResultMap">
+		SELECT * FROM APP_LOG <include refid="CriteriaSQL" /> <include refid="OrderbySQL" /> <include refid="LimitSQL" />
+	</select>
+
+	<resultMap id="AppLogResultMap" type="com.speed.model.AppLog">
+		<id property="主键" column="主键" />
+		<result property="创建时间" column="创建时间" />
+		<result property="操作ip" column="操作IP" />
+		<result property="日志内容" column="日志内容" />
+		<result property="日志类型" column="日志类型" />
+		<result property="用户id" column="用户ID" />
+	</resultMap>
+
+	<sql id="SetSQL">
+		<set>
+			<if test="entity.创建时间 != null">创建时间 = #{entity.创建时间},</if>
+			<if test="entity.操作ip != null">操作IP = #{entity.操作ip},</if>
+			<if test="entity.日志内容 != null">日志内容 = #{entity.日志内容},</if>
+			<if test="entity.日志类型 != null">日志类型 = #{entity.日志类型},</if>
+			<if test="entity.用户id != null">用户ID = #{entity.用户id},</if>
+		</set>
+	</sql>
+
+	<sql id="CriteriaSQL">
+		<where>
+			<if test="criteria != null and criteria.notEmpty">
+				<foreach collection="criteria.criterions" item="criterion">
+					<choose>
+						<when test="criterion.noValue">
+							and ${criterion.field} ${criterion.condition}
+						</when>
+						<when test="criterion.singleValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value}
+						</when>
+						<when test="criterion.betweenValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value} and #{criterion.value2}
+						</when>
+						<when test="criterion.listValue">
+							and ${criterion.field} ${criterion.condition}
+							<foreach collection="criterion.value" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+						</when>
+					</choose>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderbySQL">
+		<if test="criteria != null and criteria.orderly">
+			ORDER BY 
+			<foreach collection="criteria.orderbies" item="orderby" separator=",">
+				${orderby.field} ${orderby.value}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="LimitSQL">
+		<if test="criteria != null and criteria.pagination">
+			LIMIT #{criteria.limit.value}, #{criteria.limit.value2}
+		</if>
+	</sql>
+
+</mapper>

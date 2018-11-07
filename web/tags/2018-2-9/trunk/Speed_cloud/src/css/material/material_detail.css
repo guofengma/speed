@@ -1,0 +1,57 @@
+.material_detail_box {
+  font-size: 16px;
+}
+.material_detail_box .material_detail_list .material_detail_item {
+  padding: 10px;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_title_box .material_detail_item_title {
+  font-weight: 700;
+  width: 285px;
+  height: 25px;
+  line-height: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_title_box .material_detail_item_transpond {
+  width: 65px;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_info {
+  font-size: 16px;
+  color: #666;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_info .material_detail_item_info_avatar {
+  height: 40px;
+  width: 40px;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_info .material_detail_item_info_avatar > img {
+  display: block;
+  margin: 5px auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_info .material_detail_item_info_name {
+  height: 40px;
+  width: 225px;
+  line-height: 40px;
+  font-weight: 700;
+  text-indent: 1em;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_info .material_detail_item_info_time {
+  height: 40px;
+  line-height: 40px;
+  width: 90px;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_text_box {
+  color: #333333;
+}
+.material_detail_box .material_detail_list .material_detail_item .material_detail_item_text_box .material_detail_item_text_img {
+  max-width: 100%;
+  height: auto;
+}

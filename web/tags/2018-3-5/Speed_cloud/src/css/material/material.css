@@ -1,0 +1,117 @@
+body {
+  padding-bottom: 1.6rem;
+}
+.search_box {
+  position: relative;
+  padding: 5px 30px;
+  height: 20px;
+  background-color: #CCCCCC;
+}
+.search_box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  background-size: 100% 100%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAClUlEQVRIS7VW0XHbMAwFjvpvMkHTCWpdwO8mE6SZIMkEVSZoOkHcCepuYE8Q51vUqZ2gyQR1/iWhB5XUUTRlSb2Gd7ZlEeQDwPcAIoyMPM/PAOACERfWVH5/2Oe1UmqTpunT2D5uHocMi6K4ZubPAHAyYbMtM3/RWm/HbPcAy7I8qqrqwYtobI9unpmXWuvbQwt6gGVZLuq6fgCAo2DRCzNLGtsIrDOS2reRzbdKqcs0TXcx4A5QIqvr+lcA9gwAGRGtY4vFwaqqloj4IZhfEdHNQUBjjETw3jP6rpTKhjz1NyuKImPme/+dPdO7ELSN0BLkmw9GRNeTDy++x04p9S50uAU0xgit3Xn8JCIngTmYkOf5HSIKs934SkSZvwlaopTuJTOfT6H3wJkKD8T5N3Z+R0THPcDAq2cimqK7wciNMUsA+OQMlFJpmqauUADmeb71WLaXglk5BZC0niGiSKsdiHh7enoqTvz97wMOMWsOqJXXb++IpAJ1bO0Bht7MAfJtjTE8CfA/RSjVyidhP0JjjFSRC+vRhog+/mtksi6i6Uu/UmFgEBXrHAeCAEApdeyLX3R4YmtolFVzwCKaftRaSz/tRltpAmlIlOe+dqaCBvvIsl46W1nIVxglADxZwUZbTMwBY8wKAK48du5F1wHKQ1ghBJSZb8bKnHVWCn8vdWGF6YQf6MdnrJtaMfNaa73xbW0vvEJE6SphwwZp2EmSyNH0shR2fCm+khonkzB7slg+k+ptDDR6ibINVcqRq/qjvGHmxyRJMutw18hD0MFbm71MZYgo/ewQ8MZentr7jq2l8hwFHQQMz6tpmkXTNH4qt0OEOgQ6CXA0nxGDGKjc+l4NcCC9L68K6ECrqlrLXVb48Ad3FpjnrtEr8AAAAABJRU5ErkJggg==');
+}
+.search_box > input {
+  display: block;
+  width: 315px;
+  height: 20px;
+  line-height: 20px;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  text-indent: 30px;
+  overflow: hidden;
+}
+.academy_info_box {
+  padding-top: 5px;
+  font-size: 16px;
+}
+.academy_info_box .academy_info_list .academy_info {
+  background-color: #E4E4E4;
+  border-bottom: 1px solid #989898;
+  box-sizing: border-box;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_img {
+  padding: .2rem .533333rem;
+  width: 2.933333rem;
+  height: 2.933333rem;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_img > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail {
+  padding: .2rem 0;
+  width: 6rem;
+  position: relative;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_title {
+  font-weight: 700;
+  width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_transpond {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 50px;
+  line-height: 20px;
+  height: 20px;
+  font-size: 14px;
+  text-indent: 18px;
+  border: 1px solid #000;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_transpond:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: rotateY(180deg) translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-size: 100% 100%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABn0lEQVRIS+2VQVLCMBSG38sMa7mBeALxBHID9QTSDZms1BOoJ8BdCZviCeQIcAO8gUfAJSxenL+TMgUDkzKlG82yTfq9978/f5kaXtwwj/6BQcWzLGsnSbI8ZhyVJAVovV4/E9G31vrlpMDxeNx1zmVE1CWi15MCrbWPRDQsdXQaICRcrVYfzNzbka9+oLX2loggYXt3Vs65iVJqguetVuuzioF+mcZ3NWTmfqwpnHNfRDRzzr0bY2aHzm0BYQwRgYSdWFig+5lS6mkwGCxC39gArbWwOSxfyxKRxBiTy15eG+BoNHpj5odaaP4jIeiWpGma9pRSUyI6qwm8FJErYwxmnK99ppkw801N0KnW+m4vsHjhLzvmGup2DleWCsI9hdHOQ0WKyEXR5cEsTdO0w8xTZr6MufjYr5TCdUIylQvdBEVUeAccfDBpfMjDC9e+0LnWOk+rKCA2ekPB5pAtKtqstdh/j/Na65wVDcRmn0Iw1CL2b1FAizlWAhZzrPID9vIuRKSP2DsKWPW6YBw40xgwGG1Vqz52fyOS/q0OfwBQdbUdS+VBqAAAAABJRU5ErkJggg==');
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_content_box .academy_info_detail_content_avatar {
+  padding: .066667rem;
+  width: .666667rem;
+  height: .666667rem;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_content_box .academy_info_detail_content_avatar > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_content_box .academy_info_detail_content_name {
+  font-weight: 700;
+  text-indent: .266667rem;
+  width: 2.533333rem;
+  line-height: .8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #545454;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_content_box .academy_info_detail_content_time {
+  width: 100px;
+  line-height: .8rem;
+  text-align: center;
+  color: #545454;
+}
+.academy_info_box .academy_info_list .academy_info .academy_info_detail .academy_info_detail_content_box .academy_info_detail_content {
+  line-height: .533333rem;
+  height: 1.6rem;
+  overflow: hidden;
+  color: #545454;
+}

@@ -1,0 +1,208 @@
+body{
+    padding-bottom: 1.6rem;
+    background-color: #E4E4E4;
+}
+.submit_order_site_box{
+    font-size: 16px;
+    padding: 10px;
+    padding-top: 0;
+    line-height: 40px;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 2px solid #7F7FC5;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAA7ElEQVRIS7XWsQlCMRDG8b+9oiNYOIBuYG3lCo7gBDqKG2hnqegA6gCCbuAIEsgDkZfk7nIvbY78coR8XI/0mgJ74ACsM3WqrV6megts4v4OWKlOThTnwNDhGRh6ojkwOO5oCXRHJaArKgXdUA3ogmrBatQCVqFW0IzWgCa0FmxDj8AiFYMeYINegX6E7sCsDfUEL8AgIk9g0hUY8vYEjCLwAubAuwvwH3tE7NPFG6qxcAnrG5owK2jGLGAVpgWrMQ3ogklBN0wCumIlcAzcfhKk+Kklc6t0EHbBSh2GPAxjfkj+JZCMK0lnTc0XlaNFHXSj3hIAAAAASUVORK5CYII=');
+    }
+    .submit_order_site_name{
+        width: 100px;
+    }
+    .submit_order_site_phone{
+        width: 200px;
+    }
+    .submit_order_site{
+        position: relative;
+        width: 235px;
+        line-height: 20px;
+        margin-left: 20px;
+        &:after{
+            position: absolute;
+            top:0;
+            left: -20px;
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACA0lEQVRIS71W0XETQQyVvP4nVIDpwDun+yapgKQCQgWECggVBCoIqSChAuD7dLPpgKQD839nMfLczThr7d7aH97PG2mfVu896RCOfPDIeFAM2LbtpYi8B4DzqMgHAHggoruS4icBQwjLrutuEXGZu1BEHufz+YX3/ikXlwVUsL7vfwHASUn1ALByzp157x9T8UnAEMJJ3/cBABaFYGPYk3POe+9XVl4SsGmaa0T8sifYJlxEvtZ1fb0XIDNrha/iJBH5M5vNVCiwXq/PEfGdcfGKiF4XAzZNc4qIyl18fhLRC5Uys4Krel8cETmr6/p3/N1sadu2VyJyEwc7597GKgwhLPq+/7tzMeLnqqq+FQGm+CMis0BmFuOFJo+pC7Rt9yVtYmYzFgAuiGjD9fYxAVMcxubWdnZdd28NhcEaO35M2oKZdWK8sRQIAONFOn2sofBMRKZ/c4BK+KdDfAgA34noqtgWGphSX0kBlprHvOwsZeYfAPChBGQr5o6ILlM5U8Pb9FiugNzrNG9yPTHzPlwmuStq6cClbg1V7M5cjV76zzm3SG2JYkANzJh7G9M0epHxLY4mBJQVyuSksQCHhayGj4fBs3NuOdXKvVo6Bg+/HLpyRj6Vt9PcL8XBLR0Th7+3243EET9WVaVeLT6TtkjwudlzqfGVQz8IsPg5RuDRAf8DGVHaHXCBKJoAAAAASUVORK5CYII=');
+        }
+    }
+}
+.submit_order_box{
+    .submit_order_list{
+        .submit_order_item{
+            &:nth-of-type(n+2){
+                border-top: 1px solid #999999;
+            }
+            position: relative;
+            padding: .266667rem;
+            background-color: #fff;
+            font-size: .426667rem;
+            box-sizing: border-box;
+            .submit_order_item_checkbox{
+                position: absolute;
+                top: 50%;
+                left: .266667rem;
+                transform: translateY(-50%);
+            }
+            .submit_order_item_info{
+                .submit_order_item_info_img{
+                    width: 80px;
+                    height: 80px;
+                    >img{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .submit_order_item_info_title{
+                    margin-left: 10px;
+                    width: 265px;
+                    line-height: 20px;
+                    height: 40px;
+                    overflow: hidden;
+                    font-weight: 700;
+                }
+                .submit_order_item_info_price{
+                    margin-top: 20px;
+                    margin-left: 10px;
+                    line-height: 20px;
+                    height: 20px;
+                    width: 85px;
+                }
+                .submit_order_item_info_number{
+                    margin-top: 20px;
+                    margin-left: 10px;
+                    width: 90px;
+                    >*{
+                        width: 30px;
+                        line-height: 20px;
+                        height: 20px;
+                        text-align: center;
+                        border: 1px solid #000;
+                        box-sizing: border-box;
+                    }
+                    .submit_order_item_info_realnum{
+                        border-right: none;
+                        border-left: none;
+                    }
+                }
+            }
+        }   
+    }
+}
+.submit_order_total_box{
+    font-size: .426667rem;
+    padding: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-top: 1px solid #999999;
+    color: #999999;
+    .submit_order_total_num{
+        span{
+            color: #1A72B8;
+        }
+    }
+    .submit_order_total_price{
+        span,
+        i{
+            color: #FF0000;
+        }
+    }
+}
+.submit_order_coupon_box{
+    position: relative;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    padding: 10px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-size: 100% 100%;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAA7ElEQVRIS7XWsQlCMRDG8b+9oiNYOIBuYG3lCo7gBDqKG2hnqegA6gCCbuAIEsgDkZfk7nIvbY78coR8XI/0mgJ74ACsM3WqrV6megts4v4OWKlOThTnwNDhGRh6ojkwOO5oCXRHJaArKgXdUA3ogmrBatQCVqFW0IzWgCa0FmxDj8AiFYMeYINegX6E7sCsDfUEL8AgIk9g0hUY8vYEjCLwAubAuwvwH3tE7NPFG6qxcAnrG5owK2jGLGAVpgWrMQ3ogklBN0wCumIlcAzcfhKk+Kklc6t0EHbBSh2GPAxjfkj+JZCMK0lnTc0XlaNFHXSj3hIAAAAASUVORK5CYII=');
+    }
+    .submit_order_coupon_title{
+
+    }
+    .submit_order_coupon{
+        color: #999999;
+    }
+}
+.submit_order_remark{
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 10px;
+    height: 100px;
+    textarea{
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        resize: none;
+        border: none;
+    }
+}
+.submit_order_checkout_box{
+    font-size: 16px;
+    color: #999999;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    bottom: 0px;
+    left: 0;
+    .submit_order_remove{
+        display: none;
+        margin-top: 15px;
+        margin-right: 10px;
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #999999;
+    }
+    .submit_order_checkout,
+    .submit_order_sum{
+        display: block;
+    }
+    .submit_order_sum{
+        text-indent: 10px;
+        color: #FF0000;
+        span,
+        i{
+            color: #FF0000;
+        }
+    }
+    .submit_order_checkout{
+        height: 60px;
+        width: 80px;
+        text-align: center;
+        background-color: #1A72B8;
+        color: #fff;
+    }
+}

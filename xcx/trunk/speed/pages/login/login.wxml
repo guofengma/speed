@@ -1,0 +1,9 @@
+<view class="index_title_box">
+    <view class="index_title">极速云商</view>  
+    <view class="index_subtitle">专业不良资产处置平台</view>     
+</view>
+<view class="login_select_box">
+    <view class="login_select_wx">微信授权登录</view>
+    <view class="login_select_phone">手机号登录</view>
+</view>
+<view class="footer">极速云商</view>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.dao.UserDao">
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="com.speed.model.User">
+		INSERT INTO USER (
+			ID, AREA_ID, BONUS, BONUS_TOTAL, BONUS_WILL_ARRIVE, CREATE_TIME, EXTRACT_TOTAL, GENDER, IMAGE_KEY, IMAGE_URL, INTRODUCE_CODE, NICK_NAME, OPENID, PARENT_ID, PASSWORD, PHONE, QR_KEY, QR_URL, SHOP_NAME, STATE, TOKEN, TYPE, UNIONID, USER_CODE
+		) VALUES (
+			#{id}, #{areaId}, #{bonus}, #{bonusTotal}, #{bonusWillArrive}, #{createTime}, #{extractTotal}, #{gender}, #{imageKey}, #{imageUrl}, #{introduceCode}, #{nickName}, #{openid}, #{parentId}, #{password}, #{phone}, #{qrKey}, #{qrUrl}, #{shopName}, #{state}, #{token}, #{type}, #{unionid}, #{userCode}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="com.speed.model.User">
+		DELETE FROM USER <include refid="CriteriaSQL" />
+	</delete>
+
+	<update id="update" parameterType="com.speed.model.User">
+		UPDATE USER <include refid="SetSQL" /> <include refid="CriteriaSQL" />
+	</update>
+  
+	<select id="selectCount" parameterType="com.speed.model.User" resultType="_long">
+		SELECT COUNT(1) FROM USER <include refid="CriteriaSQL" />
+	</select>
+
+	<select id="selectList" parameterType="com.speed.model.User" resultMap="UserResultMap">
+		SELECT * FROM USER <include refid="CriteriaSQL" /> <include refid="OrderbySQL" /> <include refid="LimitSQL" />
+	</select>
+
+	<resultMap id="UserResultMap" type="com.speed.model.User">
+		<id property="id" column="ID" />
+		<result property="areaId" column="AREA_ID" />
+		<result property="bonus" column="BONUS" />
+		<result property="bonusTotal" column="BONUS_TOTAL" />
+		<result property="bonusWillArrive" column="BONUS_WILL_ARRIVE" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="extractTotal" column="EXTRACT_TOTAL" />
+		<result property="gender" column="GENDER" />
+		<result property="imageKey" column="IMAGE_KEY" />
+		<result property="imageUrl" column="IMAGE_URL" />
+		<result property="introduceCode" column="INTRODUCE_CODE" />
+		<result property="nickName" column="NICK_NAME" />
+		<result property="openid" column="OPENID" />
+		<result property="parentId" column="PARENT_ID" />
+		<result property="password" column="PASSWORD" />
+		<result property="phone" column="PHONE" />
+		<result property="qrKey" column="QR_KEY" />
+		<result property="qrUrl" column="QR_URL" />
+		<result property="shopName" column="SHOP_NAME" />
+		<result property="state" column="STATE" />
+		<result property="token" column="TOKEN" />
+		<result property="type" column="TYPE" />
+		<result property="unionid" column="UNIONID" />
+		<result property="userCode" column="USER_CODE" />
+	</resultMap>
+
+	<sql id="SetSQL">
+		<set>
+			<if test="entity.areaId != null">AREA_ID = #{entity.areaId},</if>
+			<if test="entity.bonus != null">BONUS = #{entity.bonus},</if>
+			<if test="entity.bonusTotal != null">BONUS_TOTAL = #{entity.bonusTotal},</if>
+			<if test="entity.bonusWillArrive != null">BONUS_WILL_ARRIVE = #{entity.bonusWillArrive},</if>
+			<if test="entity.createTime != null">CREATE_TIME = #{entity.createTime},</if>
+			<if test="entity.extractTotal != null">EXTRACT_TOTAL = #{entity.extractTotal},</if>
+			<if test="entity.gender != null">GENDER = #{entity.gender},</if>
+			<if test="entity.imageKey != null">IMAGE_KEY = #{entity.imageKey},</if>
+			<if test="entity.imageUrl != null">IMAGE_URL = #{entity.imageUrl},</if>
+			<if test="entity.introduceCode != null">INTRODUCE_CODE = #{entity.introduceCode},</if>
+			<if test="entity.nickName != null">NICK_NAME = #{entity.nickName},</if>
+			<if test="entity.openid != null">OPENID = #{entity.openid},</if>
+			<if test="entity.parentId != null">PARENT_ID = #{entity.parentId},</if>
+			<if test="entity.password != null">PASSWORD = #{entity.password},</if>
+			<if test="entity.phone != null">PHONE = #{entity.phone},</if>
+			<if test="entity.qrKey != null">QR_KEY = #{entity.qrKey},</if>
+			<if test="entity.qrUrl != null">QR_URL = #{entity.qrUrl},</if>
+			<if test="entity.shopName != null">SHOP_NAME = #{entity.shopName},</if>
+			<if test="entity.state != null">STATE = #{entity.state},</if>
+			<if test="entity.token != null">TOKEN = #{entity.token},</if>
+			<if test="entity.type != null">TYPE = #{entity.type},</if>
+			<if test="entity.unionid != null">UNIONID = #{entity.unionid},</if>
+			<if test="entity.userCode != null">USER_CODE = #{entity.userCode},</if>
+		</set>
+	</sql>
+
+	<sql id="CriteriaSQL">
+		<where>
+			<if test="criteria != null and criteria.notEmpty">
+				<foreach collection="criteria.criterions" item="criterion">
+					<choose>
+						<when test="criterion.noValue">
+							and ${criterion.field} ${criterion.condition}
+						</when>
+						<when test="criterion.singleValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value}
+						</when>
+						<when test="criterion.betweenValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value} and #{criterion.value2}
+						</when>
+						<when test="criterion.listValue">
+							and ${criterion.field} ${criterion.condition}
+							<foreach collection="criterion.value" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+						</when>
+					</choose>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderbySQL">
+		<if test="criteria != null and criteria.orderly">
+			ORDER BY 
+			<foreach collection="criteria.orderbies" item="orderby" separator=",">
+				${orderby.field} ${orderby.value}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="LimitSQL">
+		<if test="criteria != null and criteria.pagination">
+			LIMIT #{criteria.limit.value}, #{criteria.limit.value2}
+		</if>
+	</sql>
+
+</mapper>

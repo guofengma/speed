@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+     <!--动态页面配置动态路径CM-->
+    <link rel="import" href="./../../html/common/global.html" id="page">
+    <link rel="stylesheet" href="./../../css/common/public.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./../../css/login/common_header.css">
+    <link rel="stylesheet" href="./../../css/login/login_info.css">
+</head>
+<body>
+    <div class="header_title_box">
+        <h1 class="header_title">个人信息</h1>  
+        <div class="header_back"></div>
+    </div>
+    <div class="login_info_form_box">
+        <div class="login_info_form_user clearfix">
+            <label for="">手机号</label>
+            <input type="text">
+        </div>
+        <div class="login_info_form_code clearfix">
+            <label for="">验证码</label>
+            <input type="text">
+            <div class="get_code">获取验证码</div>
+        </div>
+        <div class="login_info_form_pwd clearfix">
+            <label for="">设置密码</label>
+            <input type="text">
+        </div>
+        <div class="login_info_form_secondary_pwd clearfix">
+            <label for="">确认密码</label>
+            <input type="text">
+        </div>
+        <div class="login_info_form_nickname clearfix">
+            <label for="">昵称</label>
+            <input type="text">
+        </div>
+        <div class="login_info_form_invitation_code clearfix">
+            <label for="">邀请码</label>
+            <input type="text" placeholder="没有可以不填">
+        </div>
+    </div>
+
+    <div class="submit">提交</div>
+    
+    <!-- js文件 -->
+    <script src="./../../node_modules/amfe-flexible/index.min.js"></script>
+    <script src="./../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./../../js/common/common.js"></script>
+    <script src="./../../js/login/login_info.js"></script>
+</body>
+</html>

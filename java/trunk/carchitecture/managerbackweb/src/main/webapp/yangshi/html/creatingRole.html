@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../libcss/public.css" />
+    <link rel="stylesheet" href="../libcss/role.css" />
+    <link rel="stylesheet" href="../icon/iconfont.css" />
+    <link rel="stylesheet" href="../libcss/newuser.css" />
+    <link rel="stylesheet" href="../libcss/Eject.css" />
+</head>
+<body>
+    <div class="step flex">
+        <div>第一步 基本信息</div>
+        <div>第二步 分配菜单权限</div>
+    </div>
+    <div class="form">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属单位</label>
+                    <div class="layui-input-block flex duan">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请选择单位" class="layui-input" disabled="disabled" id="roleCom">
+                        <div style="float: right;" class="layui-btn layui-btn-normal" id="roleBut"><i class="icon-iconjia iconfont"></i>选择</div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">角色名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入角色名称" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">权限标识</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="权限标识" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">角色说明</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="角色说明" class="layui-input">
+                    </div>
+                </div>  
+                <div class="layui-form-item">
+                    <label class="layui-form-label">是否禁用</label>
+                    <div class="layui-input-block">
+                      <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                    </div>
+                </div>                  
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>          
+            </form> 
+    <button class="layui-btn" id="next">下一步</button>
+    </div>
+    <div class="select none">
+        <h5>选择菜单</h5>
+        <ul class="first">
+            <li>
+                <i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>一级菜单
+                <ul class="none">
+                    <li><i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>二级菜单
+                        <ul class="none">
+                            <li><i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>三级菜单
+                                <ul class="none">
+                                    <li><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>四级菜单</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>一级菜单
+                <ul class="none">
+                    <li><i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>二级菜单
+                        <ul class="none">
+                            <li><i class="cli iconfont icon-arrow-fill-right"></i><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>三级菜单
+                                <ul class="none">
+                                    <li><input type="checkbox"/><i class="iconfont icon-yuanxing"></i>四级菜单</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div style="margin-top: 20px;">
+        <button class="layui-btn layui-btn-normal" id="prev">上一步</button>
+        <button class="layui-btn layui-btn-normal">完成</button>          
+        </div>
+    </div>  
+    <div id="role" class="fix none">
+        <div class="D1">选择单位</div>
+        <ul class="U1">
+            <li>项目1</li>
+            <li>项目2</li>
+            <li>项目3</li>
+        </ul>
+        <div class="D2">
+            <button class="layui-btn layui-btn-danger" id="roleCel">取消</button>
+            <button class="layui-btn layui-btn-normal" id="roleFirm">确定</button>
+        </div>
+    </div>
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/new.js"></script>
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+   
+  //监听指定开关
+  form.on('switch(switchTest)', function(data){
+    layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+      offset: '6px'
+    });
+    layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+  });
+  
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  
+  
+});
+</script>
+</html>

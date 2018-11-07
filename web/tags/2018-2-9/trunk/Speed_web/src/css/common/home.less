@@ -1,0 +1,231 @@
+body{
+    background-color: rgba(242, 242, 242, 1);
+    padding-bottom: 1.6rem;
+}
+.header_title_box{
+    .header_annual_turnover_title,
+    .header_annual_turnover_num{
+        color: #fff;
+        font-size: .426667rem;
+        color: #fff;
+        text-align: center;
+        line-height: 40px;
+    }
+}
+
+.annual_turnover_box{
+    // 昨日交易销量
+    .annual_turnover_formerly_box{
+        background-color: #fff;
+        border-bottom: 1px solid  #CCCCCC;
+        .annual_turnover_formerly_item{
+            position: relative;
+            width: 33.33333%;
+            font-size: .426667rem;
+            text-align: center;
+            color: #666666;
+            >.annual_turnover_formerly_item_num{
+                line-height: 45px;
+            }
+            >.annual_turnover_formerly_item_title{
+                line-height: 45px;
+            }
+        }
+        .annual_turnover_formerly_item::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            height: 2rem;
+            width: 1px;
+            background-color: #CCCCCC;
+        }
+        .annual_turnover_formerly_item:nth-of-type(3)::after{
+            background-color: transparent;
+        }
+    }
+    // 交易动态
+    .dynamic_trade_box{
+        background-color: #fff;
+        font-size: .426667rem;
+        height: 40px;
+        overflow: hidden;
+        position: relative;
+        .dynamic_trade_title{
+            position: relative;
+            width: 2.4rem;
+            color: #FF6600;
+            line-height: 1.066667rem;
+            text-align:center;
+        }
+        .dynamic_trade_title::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 30px;
+            background-color: #cccccc;
+        }
+        .dynamic_trade_list{
+            position: absolute;
+            left: 2.4rem;
+            width: 7.6rem;
+            line-height: 1.066667rem;
+            bottom: 0;
+            // animation: dynamic_trade_list linear 5s infinite;
+            // -webkit-animation: dynamic_trade_list linear 5s infinite;
+        }
+    }
+}
+@keyframes dynamic_trade_list{
+    0%{
+        bottom: 0;
+    }
+    100%{
+        bottom: -80px;
+    }
+}
+@-webkit-keyframes dynamic_trade_list{
+    0%{
+        bottom: 0;
+    }
+    100%{
+        bottom: -80px;
+    }
+}
+
+.basic_info_box{
+    margin-top: .266667rem;
+    font-size: .426667rem;
+    background-color: #fff;
+    .basic_info_avatar{
+        width: 2.4rem;
+        height: 1.6rem;
+        >img{
+            margin: .266667rem auto;
+            display: block;
+            width: 1.066667rem;
+            height: 1.066667rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        >div{
+            font-size: .373333rem;
+            text-align: center;
+        }
+    }
+    .basic_info_grade_box{
+        width: 4.933333rem;
+        >div{
+            line-height: .8rem;
+            >.icon_grade_medal{
+                line-height: 1;
+            }
+        }
+    }
+    .basic_info_store{
+        position: relative;
+        width: 2.666667rem;
+        text-indent: .533333rem;
+        overflow: hidden;
+        height: 2.4rem;
+        >span.icon_store.icon{
+            position: absolute;
+            top: .986667rem;
+            left: 0;
+            background-color: #fff;
+            z-index: 2;
+        }
+        >span.icon_store.icon::before{
+            display: none;
+        }
+        .icon_authentication{
+            position: absolute;
+            text-indent: 25px;
+            top: 0;
+            left: 0;
+            font-size: .373333rem;
+            width: 2.666667rem;
+            height: .8rem;
+        }
+        .icon_authentication:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-size: 100% 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACCElEQVRIS72WMXLTQBSG369kJk5FGmbkCqcJVkU4AfEJGE5AJNNjTkByAswBZDknwDfAnABRyUOTUFkDBaaTZ2z/zO5IRnbkeInkbOHCo/e+/d/u//ZBHnihiHcUXB/VOHtWZi8J9r9N3OPJeo4VoB1EZ0IEEGmUgeViwxks95d7Emb/LYEKBuJzRaCVNDNYzzPoP6Af3QB4sgsgRYax12yp3BqozuyQ09+7gGU5x15Ts/RPVeUkebmgFVpgH5BHeQEEW7HrDCsDUvgl9pwzLaAXDSF4sVtgqmBTtSpVSOFV7DnnSlHdH4UCueXhyoCk/Emsg4Yyue1H5wCCostXIZCXcdu5SG/6tbr0OwOS/BG3Hd2VbD+6APB+k7UqUThf4NXPN08HdhA1QCh1G1dpYN4G9d5oICIvSwGViROr1q0xGax7SiUmeBy7zo1p09iqMCtXauQ+BK9zCj6OvWYnPTujHrwVKCKTGaxW1uXtXqSheRvU/VFHIB9MerAJUOW5DSXCcbvZ3WaD9U2YAjWU5Lu47fTzSeq9UVdE3pqoS8/8/5o3STeDmtigjMJl7ALSmcrBVY3TTxDRL4PpWinpgz/Ad3V5UwV3mj73Vi5nmsfB99N9Lr5WAVjPUThEqY8UdI/zblFnuc9GVPubY69TOCbmE+pBWJLT+0CyGDW/FMUXTt5lQNti/wJUwGMsuEyPrwAAAABJRU5ErkJggg==');
+            width: 18px;
+            height: 18px;
+        }
+        >div{
+            line-height: .8rem;
+        }
+        .basic_info_store_name{
+            position: absolute;
+            width: auto;
+            white-space: nowrap;
+            position: absolute;
+            top: .8rem;
+            left: 0;
+            // animation: basic_info_store_name linear 5s infinite;
+            // -webkit-animation: basic_info_store_name linear 5s infinite;
+        }
+        .basic_info_store_grade{
+            position: absolute;
+            top: 1.6rem;
+            color: #CC9933;
+        }
+    }
+}
+@keyframes basic_info_store_name{
+    100%{
+        right: 80px;
+    }
+}
+
+
+.newsfeed_ads_box{
+    .newsfeed_ads_item{
+        margin-top: .266667rem;
+        background-color: #fff;
+        .newsfeed_ads_item_title_box{
+            >div{
+                width: 50%;
+                line-height: 1.066667rem;
+            }
+            .newsfeed_ads_item_name{
+                text-indent: 20px;
+                color: #333333;
+                font-size: .533333rem;
+                font-weight: 700;
+            }
+            .newsfeed_ads_item_time{
+                text-indent: 40px;
+                font-size: .426667rem;
+            }
+        }
+        .newsfeed_ads_item_go_box{
+            position: relative;
+            line-height: .8rem;
+            .newsfeed_ads_item_newmsg{
+                text-indent: .533333rem;
+                font-size: .426667rem;
+                color: transparent;
+            }
+            .newsfeed_ads_item_newmsg.active{
+                color: #666666;
+            }
+            .newsfeed_ads_item_go{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+            }
+        }
+    }
+}

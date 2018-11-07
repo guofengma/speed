@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		/**
+		 * CM
+	     * 配置全局动态路径
+	     * @param {cxt}
+     	*/
+		var pathName = document.location.pathname;   
+	    var index = pathName.substr(1).indexOf("/");   
+	    var cxt = pathName.substr(0,index+1);  
+	    console.log(cxt);
+	    /**
+		 * CM
+	     * 配置访问后台的路径
+	     * @param {path}
+     	*/
+	    var path = "login/login.do";
+	</script>
+</html>

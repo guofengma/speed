@@ -1,0 +1,35 @@
+body {
+  background-color: #f2f2f2;
+}
+.explain_box {
+  margin: 2.133333rem auto 0 auto;
+  width: 6.666667rem;
+  text-align: center;
+  font-size: .426667rem;
+}
+.in_verification {
+  margin-top: 1.6rem;
+}
+.in_verification .in_verification_img {
+  display: block;
+  margin: 0 auto;
+  width: 1.333333rem;
+  height: 1.333333rem;
+}
+.in_verification .in_verification_text {
+  margin: 0 auto;
+  width: 2.666667rem;
+  line-height: 1.066667rem;
+  text-align: center;
+  font-size: .426667rem;
+  color: #1E82D2;
+}
+.footer_box {
+  position: fixed;
+  bottom: .533333rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: .426667rem;
+  color: #666666;
+}

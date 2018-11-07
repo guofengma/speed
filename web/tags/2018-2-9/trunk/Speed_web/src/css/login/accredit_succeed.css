@@ -1,0 +1,22 @@
+body {
+  background-color: #f2f2f2;
+}
+
+.perfection_personal_info_box {
+  padding-top: 2.666667rem;
+  text-align: center;
+}
+.perfection_personal_info_box .perfection_personal_greeting {
+  font-size: .426667rem;
+  line-height: 1.066667rem;
+}
+.perfection_personal_info_box .perfection_personal_info {
+  margin: 2.4rem auto 0 auto;
+  font-size: .426667rem;
+  width: 3.733333rem;
+  height: 1.066667rem;
+  line-height: 1.066667rem;
+  color: #fff;
+  border-radius: .133333rem;
+  background-color: #1e82d2;
+}

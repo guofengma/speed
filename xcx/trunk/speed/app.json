@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/product/product",
+    "pages/material/material",
+    "pages/cart/cart",
+    "pages/me/me",
+    "pages/data_push/data_push",
+    "pages/data_push_redact/data_push_redact",
+    "pages/new_products/new_products",
+    "pages/latest_activity/latest_activity",
+    "pages/latest_activity_details/latest_activity_details",
+    "pages/search/search",
+    "pages/more_classify/more_classify",
+    "pages/product_details/product_details",
+    "pages/write_order/write_order",
+    "pages/select_address/select_address",
+    "pages/address_module/address_module",
+    "pages/edit_address/edit_address",
+    "pages/new_address/new_address",
+    "pages/my_info/my_info",
+    "pages/set_name/set_name",
+    "pages/certification/certification",
+    "pages/all_order/all_order",
+    "pages/refund/refund",
+    "pages/logistics/logistics",
+    "pages/order_details/order_details",
+    "pages/my_store/my_store",
+    "pages/my_client/my_client",
+    "pages/store_order/store_order",
+    "pages/topspeed_service/topspeed_service",
+    "pages/academy/academy",
+    "pages/academy_details/academy_details",
+    "pages/login/login",
+    "pages/login_wx_succ/login_wx_succ",
+    "pages/login_wx_succ_info/login_wx_succ_info",
+    "pages/login_wx_succ_info_result/login_wx_succ_info_result",
+    "pages/login_phone/login_phone"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "产品",
+        "iconPath": "images/product.png",
+        "selectedIconPath": "images/product_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_active.png"
+      }
+    ],
+    "color": "#515151",
+    "selectedColor": "#1A72B8",
+    "backgroundColor": "#fff",
+    "borderStyle": "#E6E6E6",
+    "position": "bottom"
+  }
+}

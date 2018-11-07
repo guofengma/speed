@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.dao.MenuDao">
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="com.speed.model.Menu">
+		INSERT INTO TB_MENU (
+			ID, CREATION_TIME, ISLEAF, NAME, PARENT_ID, PARENT_NAME, URL
+		) VALUES (
+			#{id}, #{creationTime}, #{isleaf}, #{name}, #{parentId}, #{parentName}, #{url}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="com.speed.model.Menu">
+		DELETE FROM TB_MENU <include refid="CriteriaSQL" />
+	</delete>
+
+	<update id="update" parameterType="com.speed.model.Menu">
+		UPDATE TB_MENU <include refid="SetSQL" /> <include refid="CriteriaSQL" />
+	</update>
+  
+	<select id="selectCount" parameterType="com.speed.model.Menu" resultType="_long">
+		SELECT COUNT(1) FROM TB_MENU <include refid="CriteriaSQL" />
+	</select>
+
+	<select id="selectList" parameterType="com.speed.model.Menu" resultMap="MenuResultMap">
+		SELECT * FROM TB_MENU <include refid="CriteriaSQL" /> <include refid="OrderbySQL" /> <include refid="LimitSQL" />
+	</select>
+	<select id="getMenusByRoleids" resultMap="MenuResultMap">
+		select DISTINCT m.* from tb_role_ref_menu r LEFT JOIN tb_menu m on r.menu_id = m.id WHERE r.role_id in
+		 <foreach collection="list" item="releId" index="index"
+            open="(" close=")" separator=",">
+            #{releId}
+        </foreach>
+		 order by m.id asc
+	</select>
+	<resultMap id="MenuResultMap" type="com.speed.model.Menu">
+		<id property="id" column="ID" />
+		<result property="creationTime" column="CREATION_TIME" />
+		<result property="isleaf" column="ISLEAF" />
+		<result property="name" column="NAME" />
+		<result property="parentId" column="PARENT_ID" />
+		<result property="parentName" column="PARENT_NAME" />
+		<result property="url" column="URL" />
+	</resultMap>
+
+	<sql id="SetSQL">
+		<set>
+			<if test="entity.creationTime != null">CREATION_TIME = #{entity.creationTime},</if>
+			<if test="entity.isleaf != null">ISLEAF = #{entity.isleaf},</if>
+			<if test="entity.name != null">NAME = #{entity.name},</if>
+			<if test="entity.parentId != null">PARENT_ID = #{entity.parentId},</if>
+			<if test="entity.parentName != null">PARENT_NAME = #{entity.parentName},</if>
+			<if test="entity.url != null">URL = #{entity.url},</if>
+		</set>
+	</sql>
+
+	<sql id="CriteriaSQL">
+		<where>
+			<if test="criteria != null and criteria.notEmpty">
+				<foreach collection="criteria.criterions" item="criterion">
+					<choose>
+						<when test="criterion.noValue">
+							and ${criterion.field} ${criterion.condition}
+						</when>
+						<when test="criterion.singleValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value}
+						</when>
+						<when test="criterion.betweenValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value} and #{criterion.value2}
+						</when>
+						<when test="criterion.listValue">
+							and ${criterion.field} ${criterion.condition}
+							<foreach collection="criterion.value" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+						</when>
+					</choose>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderbySQL">
+		<if test="criteria != null and criteria.orderly">
+			ORDER BY 
+			<foreach collection="criteria.orderbies" item="orderby" separator=",">
+				${orderby.field} ${orderby.value}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="LimitSQL">
+		<if test="criteria != null and criteria.pagination">
+			LIMIT #{criteria.limit.value}, #{criteria.limit.value2}
+		</if>
+	</sql>
+
+</mapper>

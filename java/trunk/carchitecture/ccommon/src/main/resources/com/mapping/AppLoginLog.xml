@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.dao.AppLoginLogDao">
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="com.speed.model.AppLoginLog">
+		INSERT INTO APP_LOGIN_LOG (
+			ID, LOGIN_IP, LOGIN_TIME, MODELS, SYSTEM_TYPE, SYSTEM_VERSION, USER_ID, VERSION_CODE
+		) VALUES (
+			#{id}, #{loginIp}, #{loginTime}, #{models}, #{systemType}, #{systemVersion}, #{userId}, #{versionCode}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="com.speed.model.AppLoginLog">
+		DELETE FROM APP_LOGIN_LOG <include refid="CriteriaSQL" />
+	</delete>
+
+	<update id="update" parameterType="com.speed.model.AppLoginLog">
+		UPDATE APP_LOGIN_LOG <include refid="SetSQL" /> <include refid="CriteriaSQL" />
+	</update>
+  
+	<select id="selectCount" parameterType="com.speed.model.AppLoginLog" resultType="_long">
+		SELECT COUNT(1) FROM APP_LOGIN_LOG <include refid="CriteriaSQL" />
+	</select>
+
+	<select id="selectList" parameterType="com.speed.model.AppLoginLog" resultMap="AppLoginLogResultMap">
+		SELECT * FROM APP_LOGIN_LOG <include refid="CriteriaSQL" /> <include refid="OrderbySQL" /> <include refid="LimitSQL" />
+	</select>
+
+	<resultMap id="AppLoginLogResultMap" type="com.speed.model.AppLoginLog">
+		<id property="id" column="ID" />
+		<result property="loginIp" column="LOGIN_IP" />
+		<result property="loginTime" column="LOGIN_TIME" />
+		<result property="models" column="MODELS" />
+		<result property="systemType" column="SYSTEM_TYPE" />
+		<result property="systemVersion" column="SYSTEM_VERSION" />
+		<result property="userId" column="USER_ID" />
+		<result property="versionCode" column="VERSION_CODE" />
+	</resultMap>
+
+	<sql id="SetSQL">
+		<set>
+			<if test="entity.loginIp != null">LOGIN_IP = #{entity.loginIp},</if>
+			<if test="entity.loginTime != null">LOGIN_TIME = #{entity.loginTime},</if>
+			<if test="entity.models != null">MODELS = #{entity.models},</if>
+			<if test="entity.systemType != null">SYSTEM_TYPE = #{entity.systemType},</if>
+			<if test="entity.systemVersion != null">SYSTEM_VERSION = #{entity.systemVersion},</if>
+			<if test="entity.userId != null">USER_ID = #{entity.userId},</if>
+			<if test="entity.versionCode != null">VERSION_CODE = #{entity.versionCode},</if>
+		</set>
+	</sql>
+
+	<sql id="CriteriaSQL">
+		<where>
+			<if test="criteria != null and criteria.notEmpty">
+				<foreach collection="criteria.criterions" item="criterion">
+					<choose>
+						<when test="criterion.noValue">
+							and ${criterion.field} ${criterion.condition}
+						</when>
+						<when test="criterion.singleValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value}
+						</when>
+						<when test="criterion.betweenValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value} and #{criterion.value2}
+						</when>
+						<when test="criterion.listValue">
+							and ${criterion.field} ${criterion.condition}
+							<foreach collection="criterion.value" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+						</when>
+					</choose>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderbySQL">
+		<if test="criteria != null and criteria.orderly">
+			ORDER BY 
+			<foreach collection="criteria.orderbies" item="orderby" separator=",">
+				${orderby.field} ${orderby.value}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="LimitSQL">
+		<if test="criteria != null and criteria.pagination">
+			LIMIT #{criteria.limit.value}, #{criteria.limit.value2}
+		</if>
+	</sql>
+
+</mapper>

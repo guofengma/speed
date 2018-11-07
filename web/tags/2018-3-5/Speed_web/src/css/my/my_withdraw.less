@@ -1,0 +1,112 @@
+body{
+    background-color: #F2F2F2;
+}
+.my_withdraw_box{
+    position: relative;
+    background-color: #fff;
+    font-size: 16px;
+    .my_withdraw_title,
+    .my_withdraw{
+        position: absolute;
+        top: 10px;
+    }
+    .my_withdraw_num{
+        padding:0  100px;
+        line-height: 80px;
+        font-size: 40px;
+        color: #FF0000;
+        text-align: center;
+    }
+    .my_withdraw_title{
+        left: 15px;
+        color: #666666;
+    }
+    .my_withdraw{
+        right: 15px;
+        width: 50px;
+        text-align: center;
+        line-height: 25px;
+        color: #0099FF;
+        border: 1px solid rgba(204, 204, 204, 1);
+    }
+    .my_withdraw_list{
+        .my_withdraw_item{
+            box-sizing: border-box;
+            border-top: 1px solid #999999;
+            border-right:1px solid #999999;
+            padding: 5px 0;
+            width: 30%;
+            text-align: center;
+            &:nth-last-of-type(1){
+                width: 40%;
+                border-right: 0;
+            }
+            .my_withdraw_item_title{
+                color: #666666;
+            }
+            .my_withdraw_item_num{
+                color: #FF0000;
+            }
+        }
+    }
+}
+.record_box{
+    margin-top: 10px;
+    font-size: 16px;
+    .record_head_list{
+        background-color: #fff;
+        .record_head_item{
+            width: 50%;
+            line-height: 50px;
+            text-align: center;
+            &.active{
+                color: #1A72B8;
+            }
+        }
+    }
+    .record_list{
+        display: none;
+        &.active{
+            display: block;
+        }
+        &.withdraw{
+            .record_item{
+                .record_item_num{
+                    line-height: 40px;
+                }
+            }
+        }
+        .record_item{
+            margin-top: 5px;
+            position: relative;
+            background-color: #fff;
+            .record_item_title{
+                text-indent: 10px;
+                width: 300px;
+                line-height: 30px;
+            }
+            .record_item_time{
+                text-indent: 10px;
+                width: 300px;
+                line-height: 30px;
+                color: #666666;
+            }
+            .record_item_num{
+                width: 75px;
+                line-height: 50px;
+                text-align: center;
+                color: #FF0000;
+                font-size: 30px;
+            }
+            .record_item_source{
+                position: absolute;
+                top: 60%;
+                right: 15px;
+                widows: 45px;
+                height: 20px;
+                color: #666666;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+{
+  "src/html/login/login_result.html": {
+    "href": "src/html/login/login_result.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/login/login_result.css",
+      "src/js/common/common.js",
+      "src/js/login/login_result.js",
+      "src/picture/in_verification_img.png"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "src/html/login/login_info.html": {
+    "href": "src/html/login/login_info.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/login/login_info.css",
+      "src/js/common/common.js",
+      "src/js/login/login_info.js"
+    ],
+    "refer": [
+      "src/html/login/login_result.html"
+    ],
+    "priority": 0
+  },
+  "src/html/login/accredit_succeed.html": {
+    "href": "src/html/login/accredit_succeed.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/login/accredit_succeed.css",
+      "src/js/common/common.js",
+      "src/js/login/accredit_succeed.js"
+    ],
+    "refer": [
+      "src/html/login/login_info.html"
+    ],
+    "priority": 0
+  },
+  "src/html/common/latest_activity.html": {
+    "href": "src/html/common/latest_activity.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/common/latest_activity.css",
+      "src/js/common/common.js",
+      "src/js/common/latest_activity.js",
+      "src/picture/1.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "src/html/common/today_push_redact.html": {
+    "href": "src/html/common/today_push_redact.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/common/today_push_redact.css",
+      "src/js/common/common.js",
+      "src/js/common/today_push_redact.js",
+      "src/picture/transpond_img_wx.jpg",
+      "src/picture/transpond_img_friendster.jpg",
+      "src/picture/1.jpg",
+      "src/picture/2.jpg",
+      "src/picture/3.jpg",
+      "src/picture/4.jpg",
+      "src/picture/5.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "src/html/common/today_push.html": {
+    "href": "src/html/common/today_push.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/common/today_push.css",
+      "src/js/common/common.js",
+      "src/js/common/today_push.js",
+      "src/picture/1.jpg",
+      "src/picture/2.jpg",
+      "src/picture/3.jpg",
+      "src/picture/4.jpg",
+      "src/picture/5.jpg",
+      "src/picture/transpond_img_wx.jpg",
+      "src/picture/transpond_img_friendster.jpg"
+    ],
+    "refer": [
+      "src/html/common/today_push_redact.html"
+    ],
+    "priority": 0
+  },
+  "src/html/common/sales_campaign.html": {
+    "href": "src/html/common/sales_campaign.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/common/sales_campaign.css",
+      "src/js/common/common.js",
+      "src/js/common/sales_campaign.js",
+      "src/picture/1.jpg",
+      "src/picture/2.jpg",
+      "src/picture/3.jpg"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "src/html/common/home.html": {
+    "href": "src/html/common/home.html",
+    "resources": [
+      "favicon.ico",
+      "src/css/common/public.css",
+      "src/css/login/common_header.css",
+      "src/css/common/home.css",
+      "src/js/common/common.js",
+      "src/js/common/home.js"
+    ],
+    "refer": [
+      "src/html/common/latest_activity.html",
+      "src/html/common/today_push.html",
+      "src/html/common/sales_campaign.html"
+    ],
+    "priority": 0
+  },
+  "src/html/login/phone_login.html": {
+    "href": "src/html/login/phone_login.html",
+    "resources": [
+      "src/css/common/public.css",
+      "favicon.ico",
+      "src/css/login/common_header.css",
+      "src/css/login/phone_login.css",
+      "src/js/common/common.js",
+      "src/js/login/phone_login.js",
+      "src/picture/login.png"
+    ],
+    "refer": [
+      "src/html/common/home.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "src/css/common/public.css",
+      "src/css/login/index.css",
+      "src/js/common/common.js",
+      "src/js/login/index.js"
+    ],
+    "refer": [
+      "src/html/login/accredit_succeed.html",
+      "src/html/login/phone_login.html"
+    ],
+    "priority": 0
+  }
+}

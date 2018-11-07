@@ -1,0 +1,19 @@
+.selected td{
+	background: #999999;
+}
+.fix{
+	top: -165px;
+}
+.fix ul{
+	width: 100px;
+	height: 160px;
+	border: 1px solid #ccc;
+	background: white;
+}
+.fix ul li{
+	width: 100px;
+	padding: 2px 0;
+}
+.fix ul li:hover{
+	background: #999;
+}

@@ -1,0 +1,19 @@
+/*公共样式  */
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.header_title_box {
+  background-color: #1e82d2;
+  position: relative;
+  width: 750rpx;
+}

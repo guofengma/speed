@@ -1,0 +1,39 @@
+body{
+    background-color: #F2F2F2;
+}
+.my_setting_box{
+    .my_setting_list{
+        .my_setting_item{
+            position: relative;
+            box-sizing: border-box;
+            line-height: 60px;
+            font-size: 16px;
+            text-indent: 20px;
+            border-bottom: 1px solid #999999;
+            color: #616161;
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                width: 24px;
+                height: 24px;
+                transform: translateY(-50%);
+                background-size: 100% 100%;
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABKUlEQVRIS7XWwU3DMBQG4PdiJScqGIEDA8AGOXPqCowQKfI7wi1KsgQb0FuPVGUAygBI7QZM4IcsBYlDnT7bLz7az/5s2fkVhEAbhuGemd8AYENETaguth9DE/q+f0HE52n81Vr7FLv4ufogOJ1wh4jXmmgQ9MgS6Cy4BHoR1EZFoCYqBrXQKFADjQZz0SQwB00GU9Es8BzKzFsiegzFYDb4hzrnPoqiuJqgg7X2ISpLY4J6isA9AKwQEZj5m4juFgE9BgDvAHDDzN44GmPqtm1P6uB/zC/OzF9VVdVN0/yo32EK5jeR9GhSsSQwB4sGc7EoUAMTg1qYCNTELoLa2CzYdd2tMebTJ4j0o5bEoehHWJIgEmz2hOM41s65DSIeyrJcz8WVFPN1v+3F8B2fbIgRAAAAAElFTkSuQmCC');
+            }
+        }
+    }
+}
+.logout{
+    position: fixed;
+    font-size: 16px;
+    top: 400px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}

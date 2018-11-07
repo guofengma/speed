@@ -1,0 +1,23 @@
+.my_withdraw_details_box .my_withdraw_details {
+  display: none;
+  font-size: 16px;
+}
+.my_withdraw_details_box .my_withdraw_details > div {
+  padding: 0 .266667rem;
+}
+.my_withdraw_details_box .my_withdraw_details.active {
+  display: block;
+}
+.my_withdraw_details_box .my_withdraw_details .my_withdraw_details_title {
+  line-height: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #999;
+}
+.my_withdraw_details_box .my_withdraw_details .my_withdraw_details_title > div:nth-of-type(2) {
+  font-size: 30px;
+  color: #ff0000;
+}
+.my_withdraw_details_box .my_withdraw_details .my_withdraw_details_item {
+  line-height: 40px;
+}

@@ -1,0 +1,67 @@
+.latest_activity_box {
+  color: #666666;
+}
+.latest_activity_box .latest_activity_list {
+  padding: 0 .133333rem;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item {
+  padding: .133333rem 0;
+  border-bottom: 1px solid #cccccc;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_img_box {
+  position: relative;
+  height: 3.333333rem;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_img_box .latest_activity_item_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_img_box .latest_activity_item_img_title {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: .8rem;
+  line-height: .8rem;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: .426667rem;
+  text-indent: 0.5em;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_text {
+  line-height: 20px;
+  width: 365px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  text-indent: 2em;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_info {
+  font-size: .426667rem;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_info .latest_activity_item_info_avatar {
+  height: 1.066667rem;
+  width: 1.066667rem;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_info .latest_activity_item_info_avatar > img {
+  display: block;
+  margin: .133333rem auto;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_info .latest_activity_item_info_name {
+  height: 1.066667rem;
+  width: 6rem;
+  line-height: 1.066667rem;
+  font-weight: 700;
+  text-indent: 1em;
+}
+.latest_activity_box .latest_activity_list .latest_activity_item .latest_activity_item_info .latest_activity_item_info_time {
+  height: 1.066667rem;
+  line-height: 1.066667rem;
+  width: 2.666667rem;
+}

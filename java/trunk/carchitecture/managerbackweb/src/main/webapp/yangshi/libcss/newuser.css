@@ -1,0 +1,57 @@
+
+.step{
+	width: 1716px;
+	height: 30px;
+	background: #eee;
+	justify-content: flex-start;
+}
+.step div{
+	width: 200px;
+	padding-left: 10px;
+	height: 30px;
+	line-height: 30px;
+	border-left: 5px solid darkgreen;
+	font-weight: 600;
+}
+.form,.select{
+	width: 1716px;
+	margin: 20px auto;
+}
+.layui-form-label{
+	padding-left: 0;
+	text-align: left;
+}
+.layui-input-block{
+	width: 1000px;
+}
+.duan{
+	justify-content: flex-start;
+}
+.icon-yuanxing,.icon-arrow-fill-right,.icon-jiantouxia{
+	font-size: 12px;
+}
+.first>li .icon-yuanxing{
+	color: green;
+}
+.first>li>ul>li .icon-yuanxing{
+	color: blue;
+}
+.first>li>ul>li>ul>li .icon-yuanxing{
+	color: orange;
+}
+.first>li>ul>li>ul>li>ul>li .icon-yuanxing{
+	color: coral;
+}
+.first>li>ul,.first>li>ul>li>ul,.first>li>ul>li>ul>li>ul{
+	margin-left: 15px;
+}
+.first i{
+	display: inline-block;
+	margin: 0 5px ;
+}
+.first input{
+	margin: 4px 5px;
+}
+.first>li>ul>li>ul>li>ul input{
+	margin: 4px 5px 4px 27px;
+}

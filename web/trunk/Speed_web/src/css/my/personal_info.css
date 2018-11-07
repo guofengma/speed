@@ -1,0 +1,96 @@
+body {
+  background-color: #F2F2F2;
+}
+.personal_info_box,
+.certification_box {
+  font-size: 16px;
+}
+.personal_info_box .personal_info_list .personal_info_item,
+.certification_box .personal_info_list .personal_info_item,
+.personal_info_box .certification_list .personal_info_item,
+.certification_box .certification_list .personal_info_item,
+.personal_info_box .personal_info_list .certification_item,
+.certification_box .personal_info_list .certification_item,
+.personal_info_box .certification_list .certification_item,
+.certification_box .certification_list .certification_item {
+  line-height: 60px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #999999;
+  background-color: #fff;
+}
+.personal_info_box .personal_info_list .personal_info_item .personal_info_item_title,
+.certification_box .personal_info_list .personal_info_item .personal_info_item_title,
+.personal_info_box .certification_list .personal_info_item .personal_info_item_title,
+.certification_box .certification_list .personal_info_item .personal_info_item_title,
+.personal_info_box .personal_info_list .certification_item .personal_info_item_title,
+.certification_box .personal_info_list .certification_item .personal_info_item_title,
+.personal_info_box .certification_list .certification_item .personal_info_item_title,
+.certification_box .certification_list .certification_item .personal_info_item_title,
+.personal_info_box .personal_info_list .personal_info_item .certification_item_title,
+.certification_box .personal_info_list .personal_info_item .certification_item_title,
+.personal_info_box .certification_list .personal_info_item .certification_item_title,
+.certification_box .certification_list .personal_info_item .certification_item_title,
+.personal_info_box .personal_info_list .certification_item .certification_item_title,
+.certification_box .personal_info_list .certification_item .certification_item_title,
+.personal_info_box .certification_list .certification_item .certification_item_title,
+.certification_box .certification_list .certification_item .certification_item_title {
+  width: 100px;
+  text-align: center;
+}
+.personal_info_box .personal_info_list .personal_info_item .personal_info_item_mes,
+.certification_box .personal_info_list .personal_info_item .personal_info_item_mes,
+.personal_info_box .certification_list .personal_info_item .personal_info_item_mes,
+.certification_box .certification_list .personal_info_item .personal_info_item_mes,
+.personal_info_box .personal_info_list .certification_item .personal_info_item_mes,
+.certification_box .personal_info_list .certification_item .personal_info_item_mes,
+.personal_info_box .certification_list .certification_item .personal_info_item_mes,
+.certification_box .certification_list .certification_item .personal_info_item_mes,
+.personal_info_box .personal_info_list .personal_info_item .certification_item_mes,
+.certification_box .personal_info_list .personal_info_item .certification_item_mes,
+.personal_info_box .certification_list .personal_info_item .certification_item_mes,
+.certification_box .certification_list .personal_info_item .certification_item_mes,
+.personal_info_box .personal_info_list .certification_item .certification_item_mes,
+.certification_box .personal_info_list .certification_item .certification_item_mes,
+.personal_info_box .certification_list .certification_item .certification_item_mes,
+.certification_box .certification_list .certification_item .certification_item_mes {
+  position: relative;
+  height: 60px;
+  width: 200px;
+  padding-right: 10px;
+  text-align: right;
+  color: #999;
+}
+.personal_info_box .personal_info_list .personal_info_item .personal_info_item_mes .personal_info_item_mes_img,
+.certification_box .personal_info_list .personal_info_item .personal_info_item_mes .personal_info_item_mes_img,
+.personal_info_box .certification_list .personal_info_item .personal_info_item_mes .personal_info_item_mes_img,
+.certification_box .certification_list .personal_info_item .personal_info_item_mes .personal_info_item_mes_img,
+.personal_info_box .personal_info_list .certification_item .personal_info_item_mes .personal_info_item_mes_img,
+.certification_box .personal_info_list .certification_item .personal_info_item_mes .personal_info_item_mes_img,
+.personal_info_box .certification_list .certification_item .personal_info_item_mes .personal_info_item_mes_img,
+.certification_box .certification_list .certification_item .personal_info_item_mes .personal_info_item_mes_img,
+.personal_info_box .personal_info_list .personal_info_item .certification_item_mes .personal_info_item_mes_img,
+.certification_box .personal_info_list .personal_info_item .certification_item_mes .personal_info_item_mes_img,
+.personal_info_box .certification_list .personal_info_item .certification_item_mes .personal_info_item_mes_img,
+.certification_box .certification_list .personal_info_item .certification_item_mes .personal_info_item_mes_img,
+.personal_info_box .personal_info_list .certification_item .certification_item_mes .personal_info_item_mes_img,
+.certification_box .personal_info_list .certification_item .certification_item_mes .personal_info_item_mes_img,
+.personal_info_box .certification_list .certification_item .certification_item_mes .personal_info_item_mes_img,
+.certification_box .certification_list .certification_item .certification_item_mes .personal_info_item_mes_img {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.personal_info_box .personal_info_list .certification_item,
+.certification_box .personal_info_list .certification_item,
+.personal_info_box .certification_list .certification_item,
+.certification_box .certification_list .certification_item {
+  border-bottom: none;
+}
+.certification_box {
+  margin-top: 10px;
+}

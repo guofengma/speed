@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		/**
+		 * CM
+	     * 配置全局动态路径
+	     * @param {cxt}
+     	*/
+		var pathName = document.location.pathname;   
+	    var index = pathName.substr(1).indexOf("/");   
+	    var cxt = pathName.substr(0,index+1);  
+	    console.log(cxt);
+	    /**
+		 * CM
+	     * 配置访问后台的路径,用户登录和注册模块
+	     * @param {path}
+     	*/
+	    var user_param = {
+	    	 //登录
+    		"login":"login/login.do",
+		    //注册
+		    "register":"/material/list.do"
+	    }
+	    /**
+		 * CM
+	     * 配置访问后台的路径,整个素材模块的路径访问
+	     * 
+     	*/
+	    var material_param = {
+	    	 //查询素材分类
+    		"selectMaterialType":"/materiaType/list.do",
+		    //根据类型查询素材
+		    "selectMaterialByType":"/material/list.do"
+	    }
+	</script>
+</html>

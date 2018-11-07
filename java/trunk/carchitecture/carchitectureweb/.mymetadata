@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="carchitectureweb"
+  id="myeclipse.1518078930707"
+  context-root="/carchitectureweb"
+  j2ee-spec="6.0"
+  archive="carchitectureweb.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

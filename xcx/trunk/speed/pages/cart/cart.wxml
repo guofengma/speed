@@ -1,0 +1,60 @@
+<view class="cart_box">
+        <view class="cart_list">
+            <view class="cart_item">
+                <input type="checkbox" class="cart_item_checkbox sea_checkbox"></input>
+                <view class="cart_item_info clearfix">
+                    <view class="cart_item_info_img fl">
+                        <image src="/images/1.jpg"></image>
+                    </view>
+                    <view class="cart_item_info_title fl">香奈儿  机械表  男表系列</view>
+                    <view class="cart_item_info_price fl" data-price="770.00">￥<span>770.00</span></view>
+                    <view class="cart_item_info_number fr clearfix">
+                        <view class="cart_item_info_subtract fl">-</view>
+                        <input class="cart_item_info_realnum fl" data-realnum="1" type="number" value="1"></input>
+                        <view class="cart_item_info_add fl">+</view>
+                    </view>
+                </view>
+            </view>
+            <view class="cart_item">
+                <input type="checkbox" class="cart_item_checkbox sea_checkbox"></input>
+                <view class="cart_item_info clearfix">
+                    <view class="cart_item_info_img fl">
+                        <image src="/images/1.jpg"></image>
+                    </view>
+                    <view class="cart_item_info_title fl">香奈儿  机械表  男表系列</view>
+                    <view class="cart_item_info_price fl" data-price="770.00">￥<span>770.00</span></view>
+                    <view class="cart_item_info_number fr clearfix">
+                        <view class="cart_item_info_subtract fl">-</view>
+                        <input class="cart_item_info_realnum fl" data-realnum="1" type="number" value="1"></input>
+                        <view class="cart_item_info_add fl">+</view>
+                    </view>
+                </view>
+            </view>
+            <view class="cart_item">
+                <input type="checkbox" class="cart_item_checkbox sea_checkbox"></input>
+                <view class="cart_item_info clearfix">
+                    <view class="cart_item_info_img fl">
+                        <image src="/images/1.jp"></image>
+                    </view>
+                    <view class="cart_item_info_title fl">香奈儿  机械表  男表系列</view>
+                    <view class="cart_item_info_price fl" data-price="770.00">￥<span>770.00</span></view>
+                    <view class="cart_item_info_number fr clearfix">
+                        <view class="cart_item_info_subtract fl">-</view>
+                        <input class="cart_item_info_realnum fl" data-realnum="1" type="number" value="1"></input>
+                        <view class="cart_item_info_add fl">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    
+
+   
+    <view class="cart_checkout_box clearfix">
+        <view class="cart_checkall fl">
+            <input type="checkbox" class="cart_checkout_checkbox sea_checkbox">全选</input>
+        </view>
+        <view class="cart_sum fl">合计：<i>￥</i><span>770.00</span></view>
+        <view class="cart_checkout fr">结算</view>
+        <view class="cart_remove fr">删除</view>
+    </view>

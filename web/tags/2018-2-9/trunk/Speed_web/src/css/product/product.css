@@ -1,0 +1,89 @@
+body {
+  padding-bottom: 1.6rem;
+}
+.shopping_box {
+  position: relative;
+}
+.shopping_box > .classify_nav {
+  top: 0;
+  left: 0;
+  width: 1.866667rem;
+  overflow: hidden;
+}
+.shopping_box > .classify_nav .classify_nav_list .classify_nav_item {
+  line-height: 1.333333rem;
+  text-align: center;
+  font-size: .426667rem;
+}
+.shopping_box > .classify_nav .classify_nav_list .classify_nav_item.active {
+  background-color: #DD2D3A;
+  color: #fff;
+}
+.shopping_box > .commodity_box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8.133333rem;
+  overflow: hidden;
+  background-color: #F2F2F2;
+  padding-bottom: 1.6rem;
+}
+.shopping_box > .commodity_box .commodity_title {
+  position: relative;
+  line-height: 1.333333rem;
+  text-align: center;
+  font-size: .426667rem;
+}
+.shopping_box > .commodity_box .commodity_title:after,
+.shopping_box > .commodity_box .commodity_title:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1px;
+  background-color: #000;
+  width: 2.666667rem;
+}
+.shopping_box > .commodity_box .commodity_title:after {
+  left: .2rem;
+}
+.shopping_box > .commodity_box .commodity_title:before {
+  right: .2rem;
+}
+.shopping_box > .commodity_box .commodity_list {
+  padding: 0 .2rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item {
+  width: 3.733333rem;
+  overflow: hidden;
+  margin-right: .266667rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item .commodity_item_img {
+  display: block;
+  width: 3.733333rem;
+  height: 3.733333rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item:nth-of-type(2n) {
+  margin-right: 0;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item:nth-of-type(n+3) {
+  margin-top: .266667rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item .commodity_item_title {
+  padding: 0 .133333rem;
+  font-size: .426667rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: .666667rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item .commodity_item_price {
+  padding: 0 .133333rem;
+  height: .8rem;
+  line-height: .8rem;
+  color: #FE352D;
+  font-size: .373333rem;
+}
+.shopping_box > .commodity_box .commodity_list .commodity_item .commodity_item_price > span {
+  font-size: .426667rem;
+}

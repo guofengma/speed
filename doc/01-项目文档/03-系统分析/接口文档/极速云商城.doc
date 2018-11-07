@@ -1,0 +1,2022 @@
+
+        <html xmlns:v="urn:schemas-microsoft-com:vml"
+        xmlns:o="urn:schemas-microsoft-com:office:office"
+        xmlns:w="urn:schemas-microsoft-com:office:word"
+        xmlns="http://www.w3.org/TR/REC-html40">
+        <head><meta http-equiv=Content-Type content="text/html;  
+        charset=utf-8">
+		<style type="text/css">
+			table  
+			{  
+				border-collapse: collapse;
+				border: none;  
+				width: 100%;  
+			}  
+			td  
+			{  
+				border: solid #CCC 1px;  
+			}  
+			.codestyle{
+				word-break: break-all;
+				background:silver;mso-highlight:silver;
+			}
+		</style>
+        <meta name=ProgId content=Word.Document>
+        <meta name=Generator content="Microsoft Word 11">
+        <meta name=Originator content="Microsoft Word 11">
+        <xml><w:WordDocument><w:View>Print</w:View></xml></head>
+        <body><h1>1、1.接口文档说明</h1><div style="margin-left:20px;"><h2>1.1、1.接口文档说明</h2><div style="margin-left:20px;"><h4>自定义协议描述</h4>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">协议</th>
+<th style="text-align: left;">协议模板</th>
+<th style="text-align: left;">示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">shopid</td>
+<td style="text-align: left;">shopid://商店id</td>
+<td style="text-align: left;">shopid://100</td>
+<td>表示访问id=1商店信息</td>
+</tr>
+<tr>
+<td style="text-align: left;">h5</td>
+<td style="text-align: left;">h5://url地址</td>
+<td style="text-align: left;">h5://<a href="http://www.baidu.com">http://www.baidu.com</a></td>
+<td>表示访问地址为http://www.baidu.com 的页面</td>
+</tr>
+</tbody>
+</table>
+<h4>h5页面链接：</h4>
+<p>-分享页：share/index.html?userId=发出分享链接的用户code值【userId值】
+-帮助页：help/index.html</p>
+<h4>接口内容描述</h4>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li>外网测试接口地址：<code>https://www.nicholeyep.com/speedapi/</code></li>
+<li>局域网测试接口地址：<code>https://192.168.0.2:8062/speedapi/</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>请求头Header参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">token</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">string</td>
+<td>用户token唯一凭证值。【涉及到用户的操作都需要传token</td>
+</tr>
+<tr>
+<td style="text-align: left;">userId</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">Integer</td>
+<td>用户唯一标识 ，登录成功后需要带上userId</td>
+</tr>
+<tr>
+<td style="text-align: left;">client_secret</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">String</td>
+<td>客户端密钥，测试阶段，andriod :1b670291-91bf-4f7d-9363-a8a80ae25a4e  ；  ios： f513032c-b3d7-410d-815c-2f5c28f44469</td>
+</tr>
+<tr>
+<td style="text-align: left;">systemType</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>系统类型</td>
+</tr>
+<tr>
+<td style="text-align: left;">models</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>机型</td>
+</tr>
+<tr>
+<td style="text-align: left;">systemVersion</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>机型系统版本</td>
+</tr>
+<tr>
+<td style="text-align: left;">versioncode</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>机型版本</td>
+</tr>
+<tr>
+<td style="text-align: left;">modulecoding</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>模块编号，0-未知，1-首页，2-设置......</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请求参数：</strong>
+-具体参数请查看每个接口的规定</p>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {}, //响应内容
+  &quot;extra&quot;: {},    //额外参数
+  &quot;message&quot;: [],  //错误提示[{&quot;code&quot;:&quot;1001&quot;,&quot;msg&quot;:&quot;失败&quot;},{&quot;code&quot;:&quot;1002&quot;,&quot;msg&quot;:&quot;失败&quot;}]
+  &quot;status&quot;: 1 //状态值，1-成功，2-错误
+}</code></pre></table>
+<h4>签名算法</h4>
+<table width='100%' class='codestyle'><pre><code>sign:签名生成的通用步骤如下： 
+
+第一步，设所有发送的数据为集合M，将集合M内所有参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&amp;key2=value2…）拼接成字符串stringA。 
+
+特别注意以下重要规则： 
+
+◆ 参数名ASCII码从小到大排序（字典序）； 
+◆ 参数名区分大小写； 
+◆ 传送的sign参数不参与签名。
+
+第二步，在stringA最后拼接上client_secret得到stringSignTemp字符串，并对stringSignTemp进行【UTF-8(转小写(MD5(stringSignTemp)+‘speed’))】运算，得到sign值signValue。</code></pre></table></div></div><h1>2、2.错误码列表</h1><div style="margin-left:20px;"><h2>2.1、2.错误码列表</h2><div style="margin-left:20px;"><p><strong>系统错误码：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">错误码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">100001</td>
+<td>成功</td>
+</tr>
+<tr>
+<td style="text-align: left;">100002</td>
+<td>失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">100003</td>
+<td>参数不完整【有些参数是必填的，没传值过来】</td>
+</tr>
+<tr>
+<td style="text-align: left;">100004</td>
+<td>请求方式错误【当前只支持POST方式】</td>
+</tr>
+<tr>
+<td style="text-align: left;">100005</td>
+<td>连接超时</td>
+</tr>
+</tbody>
+</table>
+<p><strong>用户模块错误码：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">错误码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">200001</td>
+<td>手机号码已注册</td>
+</tr>
+<tr>
+<td style="text-align: left;">200002</td>
+<td>无效的邀请码</td>
+</tr>
+<tr>
+<td style="text-align: left;">200003</td>
+<td>验证码不正确</td>
+</tr>
+<tr>
+<td style="text-align: left;">200004</td>
+<td>验证码已过期</td>
+</tr>
+<tr>
+<td style="text-align: left;">200005</td>
+<td>账号或密码错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">200006</td>
+<td>用户已存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">200007</td>
+<td>用户不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">200008</td>
+<td>无效的token 【被T出来，或者token过期】</td>
+</tr>
+<tr>
+<td style="text-align: left;">200009</td>
+<td>验证码发送失败</td>
+</tr>
+<tr>
+<td style="text-align: left;">200010</td>
+<td>非法的用户【token值被修改】</td>
+</tr>
+<tr>
+<td style="text-align: left;">200011</td>
+<td>签名错误</td>
+</tr>
+<tr>
+<td style="text-align: left;">200012</td>
+<td>验证码已发送</td>
+</tr>
+<tr>
+<td style="text-align: left;">200013</td>
+<td>账号已停用</td>
+</tr>
+<tr>
+<td style="text-align: left;">200014</td>
+<td>已绑定第三方平台账号</td>
+</tr>
+<tr>
+<td style="text-align: left;">200015</td>
+<td>钱包余额不足</td>
+</tr>
+<tr>
+<td style="text-align: left;">200016</td>
+<td>未绑定第三方平台账号</td>
+</tr>
+<tr>
+<td style="text-align: left;">200017</td>
+<td>支付密码错误</td>
+</tr>
+</tbody>
+</table>
+<p><strong>任务模块错误码：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">错误码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">400001</td>
+<td>任务不存在</td>
+</tr>
+<tr>
+<td style="text-align: left;">400002</td>
+<td>任务已失效</td>
+</tr>
+</tbody>
+</table></div></div><h1>3、3.全局接口</h1><div style="margin-left:20px;"><h2>3.1、2.验证码验证接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>验证码验证接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>global_smsVerified</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>类型  0=注册 1=找回密码 2=支付密码设置 3=找回支付密码</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>验证码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1 //1表示成功，2-失败
+}</code></pre></table></div><h2>3.2、3.图片上传接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>图片上传接口
+-每张图片上传后会生成3张图：一张原图+2张缩略图（128×128，256×256）
+-原图地址： <a href="http://文件云服务器域名/文件名.jpg">http://文件云服务器域名/文件名.jpg</a>
+-128×128缩略图地址：<a href="http://文件云服务器域名/文件名-small.jpg">http://文件云服务器域名/文件名-small.jpg</a>
+-256×256缩略图地址：<a href="http://文件云服务器域名/文件名-middle.jpg">http://文件云服务器域名/文件名-middle.jpg</a></li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>global_uploadIcon</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">files</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">文件流数组</td>
+<td>文件流数组</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>图片上传类型：0-任务/技能图片，1-评价图片，2-身份认证图片，3-技能认证图片，4-凭证图片</td>
+</tr>
+<tr>
+<td style="text-align: left;">fkId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>id 【如上传的是任务图片，则pkId为任务记录id，其他同理】</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>    {
+  &quot;data&quot;: [
+      &quot;http://文件云服务器域名/文件名.jpg&quot;,
+    &quot;http://文件云服务器域名/文件名2.jpg&quot;,
+    .....
+  ],
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>3.3、4.app版本更新接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>app版本更新接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>global_versionRefresh</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>版本号</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>1-android ， 2-ios</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  &quot;data&quot;: {
+    &quot;content&quot;: &quot;无&quot;,     //备注
+    &quot;createTime&quot;: null,
+    &quot;downloadUrl&quot;: &quot;https://www.pgyer.com/ADid  &quot;,  //下载地址
+    &quot;id&quot;: 1,
+    &quot;type&quot;: 1,    //类型，1-android,2-ios
+    &quot;version&quot;: &quot;1.0&quot;    //版本号
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}
+</code></pre></table></div></div><h1>4、4.用户模块</h1><div style="margin-left:20px;"><h2>4.1、4.找回密码接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<p>-找回密码接口</p>
+<ul>
+<li>【忘记密码】功能</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>global_retrievePwd</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>新密码</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">string</td>
+<td>验证码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code> {
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>4.2、8.刷新token接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>刷新token接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>global_refreshToken</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code> {
+  &quot;data&quot;: {
+    &quot;token&quot;: &quot;pZ5vieGeE82Ud27jCFkC/b///ngMuDjh74ucaos1goBgT3wDzWIGocsHY7qycjuLe/hT2xYxojDaajmp3lthD6GQajf34yI6yVBk/bUMSDRgQmXQD2J5IMW+fjuuJSFkbAsiP7hH4/ar7c5dYKfb5c7iM1DqgnilaGorU9WEs0o=&quot;,
+    &quot;userId&quot;: 46415052
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>4.3、11.系统消息列表接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>系统消息列表接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>auth_msgSystem</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pageNo</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>当前页数，默认是1</td>
+</tr>
+<tr>
+<td style="text-align: left;">pageSize</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>每页记录数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>{
+  &quot;data&quot;: {
+    &quot;page&quot;: {
+      &quot;pageNo&quot;: 1,
+      &quot;pageSize&quot;: 20,
+      &quot;totalPage&quot;: 1
+    },
+    &quot;list&quot;: [ //消息列表信息
+      {
+        &quot;content&quot;: &quot;我是内容&quot;,  //描述
+        &quot;createTime&quot;: 1482142840, //发送时间
+        &quot;icon&quot;: &quot;&quot;, //图片
+        &quot;id&quot;: 2,
+        &quot;title&quot;: &quot;我是标题&quot;,    //标题
+        &quot;url&quot;: &quot;h5://http://www.baidu.com&quot;, //链接地址，,请查看目录【1.接口文档说明】里面的【自定义协议描述】
+        &quot;htmlContent&quot;:&quot;&lt;html&gt;&lt;body&gt;xxxxxxx&lt;/body&gt;&lt;/html&gt;&quot; //html页面代码内容
+      }
+    ]
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>4.4、12.用户订单消息列表接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>用户订单消息列表接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>auth_msgOrders</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">pageNo</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>当前页数，默认是1</td>
+</tr>
+<tr>
+<td style="text-align: left;">pageSize</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>每页记录数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>{
+  &quot;data&quot;: {
+    &quot;page&quot;: {
+      &quot;pageNo&quot;: 1,
+      &quot;pageSize&quot;: 20,
+      &quot;totalPage&quot;: 1
+    },
+    &quot;list&quot;: [ //消息列表信息
+      {
+        &quot;content&quot;: &quot;我是内容&quot;,  //描述
+        &quot;createTime&quot;: 1482142840, //发送时间
+        &quot;orderCode&quot;:&quot;2012312321&quot;,   //订单号
+        &quot;status&quot;:1,`//状态值：-2：申请已被取消（自己取消申请/申请被拒绝），-1:订单已被取消（包括拒绝技能预约），1-待审核，2-进行中，3-待确认，4-已完成
+        &quot;type&quot;:1, //类型，0-世界任务，1-普通任务，2-技能
+        &quot;icon&quot;: &quot;&quot;, //图片
+        &quot;id&quot;: 2,
+        &quot;title&quot;: &quot;我是标题&quot;,    //标题
+        &quot;url&quot;: &quot;h5://http://www.baidu.com&quot;  //链接地址，,请查看目录【1.接口文档说明】里面的【自定义协议描述】
+      }
+    ]
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>4.5、13.验证用户是否通过实名认证接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>验证用户是否通过实名认证接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>auth_validateRealName</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>{
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1     //返回1 ，表示通过实名认证。返回其他值，表示未通过实名认证
+}</code></pre></table></div><h2>4.6、14.获取未读订单消息数量接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取未读订单消息数量接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>auth_getUnReadMsgNumber</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {
+    &quot;unReadNumber&quot;: 2        //未读消息数量
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div></div><h1>5、首页</h1><div style="margin-left:20px;"><h2>5.1、1.获取首页统计数据</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取首页统计数据(累计交易量，昨日成交量，昨日活跃用户，昨日新增用户)</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectHomeStatistics</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h2>5.1、今日推送</h2><div style="margin-left:20px;"><h3>5.1.1、1.获取今日推送</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取今日推送</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectTodayPush</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>5.1.2、2.根据id查找今日推送</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查找今日推送</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectTodayPushById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>推送id</td>
+</tr>
+</tbody>
+</table></div></div><h2>5.2、新品推荐</h2><div style="margin-left:20px;"><h3>5.2.1、1.获取新品推荐列表</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取新品推荐列表</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectNewGoods</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>5.2.2、2.根据id查找商品</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查找商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectGoodsById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>商品id</td>
+</tr>
+</tbody>
+</table></div></div><h2>5.3、最新活动</h2><div style="margin-left:20px;"><h3>5.3.1、1.获取最新活动列表</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取最新活动列表</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectActivities</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>5.3.2、2.根据id查询活动</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查询活动</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectActivityById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>活动id</td>
+</tr>
+</tbody>
+</table></div></div></div><h1>6、产品</h1><div style="margin-left:20px;"><h2>6.1、1.获取产品分类</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取产品分类</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectAllGoodsType</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+不需要</p>
+<p><strong>备注</strong> </p>
+<ul>
+<li>更多返回错误代码请看首页的错误代码描述</li>
+</ul></div><h2>6.2、2.根据分类获取品牌</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据分类获取品牌</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectBrandsByType</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">typeId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>分类id</td>
+</tr>
+</tbody>
+</table></div><h2>6.3、3.根据分类查找商品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据分类查找商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectGoodsByType</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">typeId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>类型id</td>
+</tr>
+</tbody>
+</table></div><h2>6.4、4.根据品牌查找商品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据品牌查找商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectGoodsByBrand</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">brandId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>品牌id</td>
+</tr>
+</tbody>
+</table></div><h2>6.5、5.根据id查找商品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查找商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectGoodsById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>商品id</td>
+</tr>
+</tbody>
+</table></div><h2>6.6、6.加入购物车</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>加入购物车</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>addToCart</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">goodsId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>产品id</td>
+</tr>
+<tr>
+<td style="text-align: left;">num</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>购买数量</td>
+</tr>
+</tbody>
+</table></div><h2>6.7、8.根据名字模糊搜索产品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据名字模糊搜索产品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectGoodsByName</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>产品名称</td>
+</tr>
+</tbody>
+</table></div><h2>6.8、9.获取支付参数</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取支付参数</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>pay/getPayState</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>订单id</td>
+</tr>
+</tbody>
+</table></div></div><h1>7、素材库</h1><div style="margin-left:20px;"><h2>7.1、1.查询素材分类</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<p>-查询素材分类</p>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectMaterialType</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h2>7.2、2.根据类型查询素材</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据类型查询素材</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectMaterialByType</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">materialTypeId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>素材类型id</td>
+</tr>
+</tbody>
+</table></div><h2>7.3、3.根据id查找素材</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查找素材</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectMaterialById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>素材id</td>
+</tr>
+</tbody>
+</table></div><h2>7.4、4.根据标题模糊查找素材</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据标题模糊查找素材</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectMaterialByTypeAndTitle</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">materialTypeId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>素材类型id</td>
+</tr>
+<tr>
+<td style="text-align: left;">title</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>标题</td>
+</tr>
+</tbody>
+</table></div></div><h1>8、购物车</h1><div style="margin-left:20px;"><h2>8.1、1.查找购物车商品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查找购物车商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectCartGoods</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h2>8.2、2.修改购物车商品数量</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>修改购物车商品数量</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>updateCartGoodsNum</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cartGoodsId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>购物车商品id</td>
+</tr>
+<tr>
+<td style="text-align: left;">num</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>新的商品数量</td>
+</tr>
+</tbody>
+</table></div><h2>8.3、3.删除购物车商品</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>删除购物车商品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>delCartGoods</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ids</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int []</td>
+<td>要删除的id集合</td>
+</tr>
+</tbody>
+</table></div></div><h1>9、我的</h1><div style="margin-left:20px;"><h2>9.1、1.获取用户信息接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取用户信息接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>user/getUserInfo</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {
+    &quot;address&quot;: &quot;&quot;,  //地址
+    &quot;brithday&quot;: 0,    //生日时间戳（秒）
+    &quot;hasPayPwd&quot;: 0,   //是否设置了支付密码。1-是，0-否
+    &quot;icon&quot;: &quot;&quot;, //头像
+    &quot;id&quot;: &quot;&quot;,   //
+    &quot;isRealNameAuth&quot;:1, //身份认证状态 -1:认证失败， 0-未认证，1-已认证 2-审核中
+    &quot;invitationcode&quot;: &quot;46415052&quot;,   //自己的邀请码
+    &quot;nickname&quot;: &quot;&quot;, //昵称
+    &quot;phone&quot;: &quot;13672492991&quot;, //手机号码
+    &quot;sex&quot;: 0, //性别 1-男，0-女
+    &quot;token&quot;: &quot;a3xQp47bAOTYLBGzVqEyMNdGdMy0h73Atiqkg3RhcKTwv5YcJFoF9UOKFyNCRk5VGk6m21TTr75ROP8HOmljsOYMkIjTJnj8HxzA1SDnnXkI+umgUa3y3SjuttpZVVBXWAACRPLJziogPBHuM1uuTFztThTKvyRtLgBufJM0t44=&quot;,    //用户token唯一凭证
+    &quot;userId&quot;: 46415052    //用户id
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h2>9.2、2.获取客服信息</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取客服信息</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>getServiceInfo</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h2>9.1、订单</h2><div style="margin-left:20px;"><h3>9.1.1、1.生成订单</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>生成订单</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>order/addOrder</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>1为立即购买 2为购物车结算</td>
+</tr>
+<tr>
+<td style="text-align: left;">goodsId</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>商品id，type为1时必传</td>
+</tr>
+<tr>
+<td style="text-align: left;">num</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int</td>
+<td>购买数量，type为1时必传</td>
+</tr>
+<tr>
+<td style="text-align: left;">cartGoodsIds</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">int []</td>
+<td>购物车商品id集合，，type为2时必传</td>
+</tr>
+</tbody>
+</table></div><h3>9.1.2、2.根据状态查找订单</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据状态查找订单</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>order/selectOrderByState</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET</li>
+</ul>
+<p><strong>参数：</strong> </p>
+<p>|参数名|必选|类型|说明|
+|state |是  |int |订单状态：1.待支付 2.待发货 3.待收货 4.已完成 5.已取消   |</p></div><h3>9.1.3、3.根据id查找订单</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>根据id查找订单</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>order/selectOrderById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>订单id</td>
+</tr>
+</tbody>
+</table></div><h3>9.1.4、4.取消订单</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>取消订单(未支付时可取消)</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>order/delOrderById</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>订单id</td>
+</tr>
+</tbody>
+</table></div></div><h2>9.2、店铺</h2><div style="margin-left:20px;"><h3>9.2.1、1.查找产品</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查找产品</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectShopGoods</code></li>
+</ul>
+<p><strong>请求方式：</strong>
+无</p></div><h3>9.2.2、2.查找客户</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查找客户</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectCustomers</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul></div><h3>9.2.3、3.查找订单</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查找店铺订单</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectShopOrders</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul></div><h3>9.2.4、4.查询物流</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>查询物流</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>express/selectExpress</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>订单id</td>
+</tr>
+</tbody>
+</table></div></div><h2>9.3、返佣与提现</h2><div style="margin-left:20px;"><h3>9.3.1、1.获取资金记录</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取资金记录(可提现，待返佣，总佣金，提现总额)</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectBonus</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>9.3.2、2.获取佣金记录</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取佣金记录</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectBonusLog</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>9.3.3、3.获取提现记录</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取提现记录</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectExtractLog</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>9.3.4、4.获取提现账户</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取提现账户</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>selectBankAccounts</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>GET </li>
+</ul>
+<p><strong>参数：</strong>
+无</p></div><h3>9.3.5、5.添加提现账户</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>添加提现账户</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>addBankAccount</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">bankId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>银行id</td>
+</tr>
+<tr>
+<td style="text-align: left;">cardNum</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>卡号</td>
+</tr>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>持卡人</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>短信验证码</td>
+</tr>
+</tbody>
+</table></div><h3>9.3.6、6.提现申请</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>提现申请</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>bonusExtract</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">bankAccountId</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>银行账户id</td>
+</tr>
+<tr>
+<td style="text-align: left;">extractMoney</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">int</td>
+<td>提取金额(分)</td>
+</tr>
+</tbody>
+</table></div></div><h2>9.4、个人信息</h2><div style="margin-left:20px;"><h3>9.4.1、1.修改头像接口</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>修改头像接口
+<strong>请求URL：</strong> </li>
+<li><code>user/updateIcon</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">file</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">文件流</td>
+<td>头像文件流</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>{
+  &quot;data&quot;: &quot;http://文件云服务器域名/文件名.jpg&quot;,    //返回原图的地址
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h3>9.4.2、2.修改昵称接口</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>修改昵称接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>user/updateNick</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nickName</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>昵称</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code> {
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h3>9.4.3、3.实名认证接口</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>实名认证接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>user/addRealNameAuth</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">String</td>
+<td>姓名</td>
+</tr>
+<tr>
+<td style="text-align: left;">idcard</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>身份证号码</td>
+</tr>
+<tr>
+<td style="text-align: left;">file_front</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">file</td>
+<td>正面身份证</td>
+</tr>
+<tr>
+<td style="text-align: left;">file_reverse</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">file</td>
+<td>反面身份证</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>
+{
+  &quot;data&quot;: {
+    &quot;id&quot;: 2   //实名认证记录id
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h3>9.4.4、4.获取实名验证信息接口</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取实名验证信息接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>user/getRealNameAuth</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>{
+  &quot;data&quot;: {
+    &quot;icons&quot;: [    //图片
+      {
+        &quot;id&quot;: 26,
+        &quot;url&quot;: &quot;http://ohr35pxo3.bkt.clouddn.com/333cf566-2d61-4d60-a8f4-294b53613d00.jpg&quot;
+      },
+      {
+        &quot;id&quot;: 27,
+        &quot;url&quot;: &quot;http://ohr35pxo3.bkt.clouddn.com/333cf566-2d61-4d60-a8f4-294b53613d00.jpg&quot;
+      }
+    ],
+    &quot;id&quot;: 1,
+    &quot;idcard&quot;: &quot;40012345&quot;,   //身份证号码 
+    &quot;realname&quot;: &quot;卡洛&quot;,   //真实姓名
+    &quot;status&quot;: 0       //状态 0-未认证，1-已认证,2-认证失败
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div></div><h2>9.5、设置</h2><div style="margin-left:20px;"><h3>9.5.1、1.修改密码接口</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>修改密码接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>user/updatePwd</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>旧密码</td>
+</tr>
+<tr>
+<td style="text-align: left;">newPassword</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>新密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code> {
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div><h3>9.5.2、2.更换绑定手机</h3><div style="margin-left:30px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>更换绑定手机</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>changePhone</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>新号码</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>验证码</td>
+</tr>
+</tbody>
+</table></div></div></div><h1>10、注册登录</h1><div style="margin-left:20px;"><h2>10.1、1.发送短信验证码接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>发送短信验证码接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>send_sms</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">type</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>类型  0=注册 1=找回密码 2=支付密码设置 3=找回支付密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {},
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1 //1表示成功，2-失败
+}</code></pre></table></div><h2>10.2、2.用户注册接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>用户注册接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>login/register</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">code</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>验证码</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>注册密码</td>
+</tr>
+<tr>
+<td style="text-align: left;">nickName</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td style="text-align: left;">inviteCode</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>邀请码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {
+    &quot;token&quot;: &quot;NRt/Ya+UOp0bVf40yLbTAXKrUlBM8wzKxf/C1RR0Wx4SbfjBaNrXD0A7BgjGvnzMo2ZnPjnDie9benPPeS9nEkuQ8tYU/0ur7S5LSvnjRQY9dHWan4UZDkIs/EO+aVPJQMFW3yOvFcXHJb9C5FUakCJmcq1AWQ09sokp7Hh60Kk=&quot;,    //用户token唯一凭证
+    &quot;userId&quot;: 46415052    //用户id
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1 //1成功 2失败
+}</code></pre></table></div><h2>10.3、3.登录接口</h2><div style="margin-left:20px;"><p><strong>简要描述：</strong> </p>
+<ul>
+<li>登录接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>login/login</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead><tr style='background-color: rgb(0, 136, 204); color: rgb(255, 255, 255);'>
+<th style="text-align: left;">参数名</th>
+<th style="text-align: left;">必选</th>
+<th style="text-align: left;">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">phone</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left;">password</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">string</td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<table width='100%' class='codestyle'><pre><code>  {
+  &quot;data&quot;: {
+    &quot;address&quot;: &quot;&quot;,  //地址
+    &quot;brithday&quot;: 0,    //生日时间戳（秒）
+    &quot;icon&quot;: &quot;&quot;, //头像
+    &quot;id&quot;: &quot;&quot;,   //
+    &quot;isRealNameAuth&quot;:1, //身份认证状态 -1:认证失败， 0-未认证，1-已认证 2-审核中
+    &quot;invitationcode&quot;: &quot;46415052&quot;,   //自己的邀请码
+    &quot;nickname&quot;: &quot;&quot;, //昵称
+    &quot;phone&quot;: &quot;13672492991&quot;, //手机号码
+    &quot;sex&quot;: 0, //性别 1-男，0-女
+    &quot;token&quot;: &quot;a3xQp47bAOTYLBGzVqEyMNdGdMy0h73Atiqkg3RhcKTwv5YcJFoF9UOKFyNCRk5VGk6m21TTr75ROP8HOmljsOYMkIjTJnj8HxzA1SDnnXkI+umgUa3y3SjuttpZVVBXWAACRPLJziogPBHuM1uuTFztThTKvyRtLgBufJM0t44=&quot;,    //用户token唯一凭证
+    &quot;userId&quot;: 46415052    //用户id
+  },
+  &quot;extra&quot;: {},
+  &quot;message&quot;: [],
+  &quot;status&quot;: 1
+}</code></pre></table></div></div></body></html>

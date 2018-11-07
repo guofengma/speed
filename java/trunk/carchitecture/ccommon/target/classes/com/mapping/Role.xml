@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.speed.dao.RoleDao">
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="id" parameterType="com.speed.model.Role">
+		INSERT INTO TB_ROLE (
+			ID, CREATE_TIME, DESCRIPTION, ROLE_NAME, STATUS
+		) VALUES (
+			#{id}, #{createTime}, #{description}, #{roleName}, #{status}
+		)
+	</insert>
+
+	<delete id="delete" parameterType="com.speed.model.Role">
+		DELETE FROM TB_ROLE <include refid="CriteriaSQL" />
+	</delete>
+
+	<update id="update" parameterType="com.speed.model.Role">
+		UPDATE TB_ROLE <include refid="SetSQL" /> <include refid="CriteriaSQL" />
+	</update>
+  
+	<select id="selectCount" parameterType="com.speed.model.Role" resultType="_long">
+		SELECT COUNT(1) FROM TB_ROLE <include refid="CriteriaSQL" />
+	</select>
+
+	<select id="selectList" parameterType="com.speed.model.Role" resultMap="RoleResultMap">
+		SELECT * FROM TB_ROLE <include refid="CriteriaSQL" /> <include refid="OrderbySQL" /> <include refid="LimitSQL" />
+	</select>
+
+	<resultMap id="RoleResultMap" type="com.speed.model.Role">
+		<id property="id" column="ID" />
+		<result property="createTime" column="CREATE_TIME" />
+		<result property="description" column="DESCRIPTION" />
+		<result property="roleName" column="ROLE_NAME" />
+		<result property="status" column="STATUS" />
+	</resultMap>
+
+	<sql id="SetSQL">
+		<set>
+			<if test="entity.createTime != null">CREATE_TIME = #{entity.createTime},</if>
+			<if test="entity.description != null">DESCRIPTION = #{entity.description},</if>
+			<if test="entity.roleName != null">ROLE_NAME = #{entity.roleName},</if>
+			<if test="entity.status != null">STATUS = #{entity.status},</if>
+		</set>
+	</sql>
+
+	<sql id="CriteriaSQL">
+		<where>
+			<if test="criteria != null and criteria.notEmpty">
+				<foreach collection="criteria.criterions" item="criterion">
+					<choose>
+						<when test="criterion.noValue">
+							and ${criterion.field} ${criterion.condition}
+						</when>
+						<when test="criterion.singleValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value}
+						</when>
+						<when test="criterion.betweenValue">
+							and ${criterion.field} ${criterion.condition} #{criterion.value} and #{criterion.value2}
+						</when>
+						<when test="criterion.listValue">
+							and ${criterion.field} ${criterion.condition}
+							<foreach collection="criterion.value" item="item" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+						</when>
+					</choose>
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<sql id="OrderbySQL">
+		<if test="criteria != null and criteria.orderly">
+			ORDER BY 
+			<foreach collection="criteria.orderbies" item="orderby" separator=",">
+				${orderby.field} ${orderby.value}
+			</foreach>
+		</if>
+	</sql>
+
+	<sql id="LimitSQL">
+		<if test="criteria != null and criteria.pagination">
+			LIMIT #{criteria.limit.value}, #{criteria.limit.value2}
+		</if>
+	</sql>
+
+</mapper>

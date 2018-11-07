@@ -1,0 +1,80 @@
+.layui-content{
+	width: 1716px;
+}
+
+.layui-main-left{
+	width: 200px;
+}
+
+.layui-main-right{
+	width: 1516px;
+	background: white;
+	min-height: 827px;
+}
+.site-demo-button{
+	padding: 0;
+	margin: 0;
+}
+.layui-table{
+	text-align: center;
+}
+.layui-table th{
+	text-align: center;
+}
+.layui-table tbody tr td:last-child span{
+	display: block;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	background: #15DB81;
+}
+.layui-table tbody tr td:last-child span i{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+.shezhi{
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	background: #15DB81;
+}
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}
+.icon-arrow,.icon-shezhi{
+	color: white;
+}
+#page{
+	width: 600px;
+	margin: auto;
+}
+#pageTitle{
+	width: 400px;
+	margin: auto;
+	/*text-align: center;*/
+}
+.selected td{
+	background: #999999;
+}
+.fix{
+	top: -165px;
+}
+.fix ul{
+	width: 100px;
+	/*height: 160px;*/
+	border: 1px solid #ccc;
+	background: white;
+}
+.fix ul li{
+	width: 100px;
+	padding: 2px 0;
+}
+.fix ul li:hover{
+	background: #999;
+}

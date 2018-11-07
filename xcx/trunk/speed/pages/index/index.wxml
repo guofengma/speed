@@ -1,0 +1,84 @@
+<view class="header_title_box"> 
+        <view class="header_annual_turnover_title">年累计交易额（元）</view>
+        <view class="header_annual_turnover_num">1,928,892.00</view>
+    </view>
+    
+    <view class="annual_turnover_box">
+        <view class="annual_turnover_formerly_box clearfix">
+            <view class="annual_turnover_formerly_item fl">
+                <view class="annual_turnover_formerly_item_num">1,928</view>
+                <view class="annual_turnover_formerly_item_title">昨日交易额</view>
+            </view>
+            <view class="annual_turnover_formerly_item fl">
+                <view class="annual_turnover_formerly_item_num">11</view>
+                <view class="annual_turnover_formerly_item_title">昨日成交订单</view>
+            </view>
+            <view class="annual_turnover_formerly_item fl">
+                <view class="annual_turnover_formerly_item_num">222</view>
+                <view class="annual_turnover_formerly_item_title">昨日新增客户</view>
+            </view>
+        </view> 
+        <view class="dynamic_trade_box clearfix">
+            <view class="dynamic_trade_title fl">交易动态</view>
+            <view class="dynamic_trade_list">
+                <view class="dynamic_trade_item">极速黎志辉代理成交了一单130元</view>
+                <view class="dynamic_trade_item">极速黎志辉代理成交了一单131元</view>
+                <view class="dynamic_trade_item">极速黎志辉代理成交了一单132元</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="basic_info_box clearfix">
+        <view class="basic_info_avatar fl">
+            <image src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=4262817607,878422095&fm=85&s=2981FD1301527FFD09AC0DFB03005031"></image>
+            <view>极速专业代理</view>
+        </view>
+        <view class="basic_info_grade_box fl">
+            <view class="basic_info_grade">
+                级别：
+                <span class="icon_grade_medal icon"></span>
+                <span class="icon_grade_medal icon"></span>
+            </view>    
+            <view class="basic_info_grade_contact">联系方式：<span>13628816211</span></view>
+            <view class="basic_info_grade_location">所在地区： <span>广东  广州</span></view>
+        </view>
+        <view class="basic_info_store fl">
+            <span class="icon_store icon"></span>
+            <view class="icon_authentication icon">极速认证</view>
+            <view class="basic_info_store_name">黎志辉的店</view>
+            <view class="basic_info_store_grade">金牌店铺</view>
+        </view>
+    </view>
+
+    <view class="newsfeed_ads_box">
+        <view class="newsfeed_ads_item">
+            <view class="newsfeed_ads_item_title_box clearfix">
+                <view class="newsfeed_ads_item_name fl">今日推送</view>
+                <view class="newsfeed_ads_item_time fr">2018.01.16 06:09</view>
+            </view>
+            <view class="newsfeed_ads_item_go_box">
+                <view class="newsfeed_ads_item_newmsg active">更新数量：10</view>
+                <view class="newsfeed_ads_item_go icon"></view>
+            </view>
+        </view>
+        <view class="newsfeed_ads_item">
+            <view class="newsfeed_ads_item_title_box clearfix">
+                <view class="newsfeed_ads_item_name fl">新品推荐</view>
+                <view class="newsfeed_ads_item_time fr">2018.01.16 06:09</view>
+            </view>
+            <view class="newsfeed_ads_item_go_box">
+                <view class="newsfeed_ads_item_newmsg">更新数量：10</view>
+                <view class="newsfeed_ads_item_go icon"></view>
+            </view>
+        </view>
+        <view class="newsfeed_ads_item">
+            <view class="newsfeed_ads_item_title_box clearfix">
+                <view class="newsfeed_ads_item_name fl">最新活动</view>
+                <view class="newsfeed_ads_item_time fr">2018.01.16 06:09</view>
+            </view>
+            <view class="newsfeed_ads_item_go_box">
+                <view class="newsfeed_ads_item_newmsg">更新数量：10</view>
+                <view class="newsfeed_ads_item_go icon"></view>
+            </view>
+        </view>
+    </view>

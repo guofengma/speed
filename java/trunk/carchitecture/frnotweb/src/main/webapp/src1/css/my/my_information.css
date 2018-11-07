@@ -1,0 +1,94 @@
+body {
+  background-color: #F2F2F2;
+  font-size: 15px;
+}
+.infor_function{
+	height: 100px;
+}
+.infor_function > div{
+	display: inline-block;
+	border: 1px #838383 solid;
+	height: 70px;width:70px;
+	margin: 10px 20px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 70px;
+}
+/*交易物流CM*/
+.infor_container .logistics{
+	/*display: none;*/
+}
+.infor_container .logistics .logistics_item{
+	background-color: white;
+	height: 120px;
+	margin-top: 10px;
+}
+.infor_container .logistics .logistics_item .logistics_item_base{
+	overflow: hidden;
+}
+.infor_container .logistics .logistics_item .logistics_item_base div{
+	display: inline-block;
+	margin: 10px 20px;
+	
+}
+.infor_container .logistics .logistics_item .logistics_pro div{
+	display: inline-block;
+	
+}
+.infor_container .logistics .logistics_item .logistics_pro .logistics_pro_img{
+	width: 60px;height: 60px;
+	line-height: 60px;
+	margin: 10px 20px;
+}
+.infor_container .logistics .logistics_item .logistics_pro .logistics_pro_img img{
+	width: 100%;height: 100%;
+	
+}
+.infor_container .logistics .logistics_item .logistics_pro .logistics_pro_name{
+
+}
+/**/
+/*客服通知*/
+.infor_container .infor_service{
+	height: 100px;
+	display: none;
+}
+	
+.infor_container .infor_service .infor_service_item{
+	background-color: white;
+}
+.infor_container .infor_service .infor_service_item .infor_service_pro div{
+	display: inline-block;
+	height: 70px;
+	text-align: center;
+	line-height: 70px;
+	margin-right: 10px;
+}
+.infor_container .infor_service .infor_service_item .infor_service_pro .infor_service_pro_img{
+	width: 70px;height: 70px;
+	line-height: 60px;
+	margin: 15px 20px;
+}
+.infor_container .infor_service .infor_service_item .infor_service_pro .infor_service_pro_img img{
+	width: 100%;height: 100%;
+}
+/*通知*/
+.infor_container .inform{
+	height: 80px;
+	display: none;
+}
+.infor_container .inform .inform_item{
+	height: 40px;
+	background-color: white;
+	margin-top: 2px;
+}
+.infor_container .inform .inform_item div{
+	display: inline-block;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	margin-left: 20px;
+}
+.infor_container .inform .inform_item .inform_item_time{
+	margin-right: 10px;
+}

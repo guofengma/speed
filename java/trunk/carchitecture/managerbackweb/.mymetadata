@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="managerbackweb"
+  id="myeclipse.1518078930013"
+  context-root="/speedback"
+  j2ee-spec="6.0"
+  archive="managerbackweb.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

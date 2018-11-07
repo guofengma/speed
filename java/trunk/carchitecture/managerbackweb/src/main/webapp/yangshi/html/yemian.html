@@ -1,0 +1,380 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.test_box{
+			border: 1px solid #000;
+			margin: 0 auto;
+			width: 1350px;
+		}
+        .test_box > div.q >label{
+            width: 100%;
+        }
+		.test_box > div.x{
+			border-bottom: 1px solid #000;
+            height: 50px;
+		}
+		.test_box > div >label{
+			width: 7%;
+			display: block;
+			height: 50px;
+			line-height: 50px;
+            float: left;
+		}
+		.test_box > div >textarea{
+			width: 93%;
+            float: left;
+			display: block;
+			height: 50px;
+			resize: vertical;
+			border: none;
+		}
+		.whether_realize{
+			height: 50px;
+			position: relative;
+		}
+		.whether_realize label{
+			height: 50px;
+			float: left;
+			width: 20%;
+		}
+		.whether_realize >div{
+			position: absolute;
+			top: 15px;
+    		left:  110px;
+		}
+		.new_request_explain{
+			position: relative;
+		}
+		.new_request_explain .popup{
+			position: absolute;
+			right: 35px;
+			top: 0;
+			width: 100px;
+			/*height: 40px;*/
+			background: #fa4da1;
+			display: none;
+		}
+		.new_request_explain .popup >div{
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.new_request_explain ul{
+			height: 25px;
+			padding: 0;
+			margin: 0;
+			border-top: 1px solid #000;
+		}
+		.new_request_explain .data textarea{
+			width: 100%;
+			resize: vertical;
+			border: none;
+		}
+		.new_request_explain .value li:nth-last-of-type(1){
+			cursor: pointer;
+		}
+		.new_request_explain ul li{
+			float: left;
+			height: 25px;
+			width: 12.5%;
+			border: 1px solid #000; 
+			border-left: none;
+			border-top: none;
+			border-bottom: none;
+			box-sizing: border-box;
+			list-style: none;
+			text-align: center;
+		}
+		.new_request_explain ul li input{
+			width: 100%;
+			border: none;
+			height: 100%;
+			text-align: center;
+		}
+		.new_request_explain ul:nth-last-of-type(1){
+			border-bottom: 1px solid #000;
+		}
+		.new_request_explain ul li:nth-of-type(1){
+			border-left: none; 
+		}
+		.new_request_explain ul li:nth-last-of-type(1){
+			border-right: none; 
+		}
+        .functional_description{
+            border-top: 1px solid #000;
+        }
+        .baocun{
+            height: 100px;
+            position: relative;
+        }
+        .baocun div{
+            position: absolute;
+            border: 1px solid #000;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .baocun div:nth-of-type(1){
+            top:50%;
+            transform: translateY(-50%,-50%);
+            left: 45%;
+        }
+        .baocun div:nth-of-type(2){
+            top:50%;
+            transform: translateY(-50%,-50%);
+            left: 55%;
+        }
+	</style>
+	<script src="https://cdn.bootcss.com/jquery/1.8.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="test_box">
+		<div class="whether_realize q">
+			<label for="">是否实现：</label>
+			<div><input name="Fruit" type="checkbox" value="" />	未实现</div>
+		</div>
+		<div class="functional_description x">
+			<label for="">功能描述：</label>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+		<div class="request_description x">
+			<label for="">请求描述：</label>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+		<div class="request_mode x">
+			<label for="">请求方式：</label>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+		<div class="request_data x">
+			<label for="">请求数据：</label>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+		</div>
+		<div class="new_request_explain" data-id="1">
+			<div>请求参数说明：</div>
+			<div class="popup" style="display: block;">
+				<!-- <div>编辑</div> -->
+				<div>新增</div>
+			</div>
+			<ul class="title">
+				<li>ID</li>
+				<li>字段名称</li>
+				<li>字段类型</li>
+				<li>是否允许空</li>
+				<li>说明</li>
+				<li>锁定</li>
+				<li>排序值</li>
+				<li class="popupbox">操作</li>
+			</ul>
+			<ul class="value">
+				<li>1</li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li class="del">删除</li>
+			</ul>
+			<div class="data">
+				<label for="">请求数据：</label>
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</div>
+		</div>
+		<div class="new_request_explain" data-id="2">
+			<div>返回参数说明：</div>
+			<div class="popup" style="display: block;">
+				<!-- <div>编辑</div> -->
+				<div>新增</div>
+			</div>
+			<ul class="title">
+				<li>ID</li>
+				<li>字段名称</li>
+				<li>字段类型</li>
+				<li>是否允许空</li>
+				<li>说明</li>
+				<li>锁定</li>
+				<li>排序值</li>
+				<li class="popupbox">操作</li>
+			</ul>
+			<ul class="value">
+				<li>1</li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li><input type="text"></li>
+				<li class="del">删除</li>
+			</ul>
+			<div class="data">
+				<label for="">返回数据：</label>
+				<textarea name="" id="typeId" cols="30" rows="10"  onpropertychange="this.style.height=this.scrollHeight + 'px'" oninput="this.style.height=this.scrollHeight + 'px'">{
+  "status": 1,
+  "message": [],
+  "data": [
+    {
+      "id": 26,
+      "icon": "yinliao",
+      "ifqy": 1,
+      "remarks": "",
+      "sortNum": 1,
+      "typeName": "饮料食品",
+      "types": [
+        {
+          "id": 36,
+          "icon": "",
+          "ifqy": 1,
+          "parentId": 26,
+          "remarks": "",
+          "sortNum": 1,
+          "typeName": "零食干货",
+          "urls": [
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/64",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/300",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/600"
+          ],
+          "imageid": 219
+        }
+      ],
+      "imageid": 131
+    },
+    {
+      "id": 26,
+      "icon": "yinliao",
+      "ifqy": 1,
+      "remarks": "",
+      "sortNum": 1,
+      "typeName": "饮料食品",
+      "types": [
+        {
+          "id": 36,
+          "icon": "",
+          "ifqy": 1,
+          "parentId": 26,
+          "remarks": "",
+          "sortNum": 1,
+          "typeName": "零食干货",
+          "urls": [
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/64",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/300",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/600"
+          ],
+          "imageid": 219
+        }
+      ],
+      "imageid": 131
+    }
+  ],
+  "extra": {}
+}</textarea>
+			</div>
+		</div>
+
+        <div class="functional_description x">
+            <label for="">备注/说明：</label>
+            <textarea name="" id="" cols="30" rows="10">{
+  "status": 1,
+  "message": [],
+  "data": [
+    {
+      "id": 26,
+      "icon": "yinliao",
+      "ifqy": 1,
+      "remarks": "",
+      "sortNum": 1,
+      "typeName": "饮料食品",
+      "types": [
+        {
+          "id": 36,
+          "icon": "",
+          "ifqy": 1,
+          "parentId": 26,
+          "remarks": "",
+          "sortNum": 1,
+          "typeName": "零食干货",
+          "urls": [
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/64",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/300",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/600"
+          ],
+          "imageid": 219
+        }
+      ],
+      "imageid": 131
+    },
+    {
+      "id": 26,
+      "icon": "yinliao",
+      "ifqy": 1,
+      "remarks": "",
+      "sortNum": 1,
+      "typeName": "饮料食品",
+      "types": [
+        {
+          "id": 36,
+          "icon": "",
+          "ifqy": 1,
+          "parentId": 26,
+          "remarks": "",
+          "sortNum": 1,
+          "typeName": "零食干货",
+          "urls": [
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/64",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/300",
+            "http://osnd9aq12.bkt.clouddn.com/8d064583-0a84-44a5-a41f-c573200d4058?imageView2/0/h/600"
+          ],
+          "imageid": 219
+        }
+      ],
+      "imageid": 131
+    }
+  ],
+  "extra": {}
+}</textarea>
+        </div>
+        <div class="baocun">
+            <div>提交</div>
+            <div>保存</div>
+        </div>
+	</div>
+	<script>
+		// $('#typeId').trigger('change');
+		// $(".popupbox").click(function(e){
+		// 	e.stopPropagation();
+		// 	$(".new_request_explain .popup").hide();
+		// 	$(this).parent().siblings(".popup").show()
+		// });
+		// $("body").click(function(e){
+		// 	$(".new_request_explain .popup").hide();
+		// })
+		$(".new_request_explain").on("click",".value .del",function(e){
+			console.log(this)
+			$(this).parent().remove();
+		})
+		var htmlnum1 = 1;
+		var htmlnum2 = 1;
+		$(".new_request_explain .popup >div").click(function(){
+			if ($(this).parents(".new_request_explain").attr("data-id") == 1) {
+				htmlnum = htmlnum1++;
+			}else{
+				htmlnum = htmlnum2++;
+			}
+			var html = '<ul class="value"><li>'+ htmlnum +'</li><li><input type="text"></li><li><input type="text"></li><li><input type="text"></li><li><input type="text"></li><li><input type="text"></li><li><input type="text"></li><li class="del">删除</li></ul>';
+			if ($(this).html() === "新增") {
+				if ($(this).parents(".new_request_explain").find(".value").length === 0) {
+					$(this).parent().siblings(".title").after(html)
+				}else{
+					$(this).parent().siblings(".value:last").after(html)	;
+				}
+			}else if ($(this).html() === "编辑"){
+				console.log(2)
+			}
+		})
+	</script>
+</body>
+</html>

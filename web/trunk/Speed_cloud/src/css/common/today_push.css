@@ -1,0 +1,83 @@
+body {
+  background-color: #f2f2f2;
+}
+.today_push_box {
+  font-size: .426667rem;
+  color: #666666;
+}
+.today_push_box .today_push_item {
+  position: relative;
+  padding: .266667rem .133333rem;
+  border-bottom: 1px solid #CCCCCC;
+  box-sizing: border-box;
+}
+.today_push_box .today_push_item .today_push_item_info_avatar {
+  width: 1.066667rem;
+  height: 1.066667rem;
+  margin-right: .266667rem;
+}
+.today_push_box .today_push_item .today_push_item_info_avatar > img {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.today_push_box .today_push_item .today_push_item_info > div {
+  line-height: .533333rem;
+}
+.today_push_box .today_push_item .today_push_item_info_redact {
+  position: absolute;
+  width: 50px;
+  height: .533333rem;
+  line-height: .533333rem;
+  top: 15px;
+  right: 35px;
+  border: 1px solid #666666;
+  text-align: center;
+}
+.today_push_box .today_push_item_info_content_box {
+  padding: 0 0 0 1.333333rem;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_link {
+  position: relative;
+  color: #0066FF;
+  line-height: .533333rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 7.2rem;
+  padding-right: .426667rem;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_link::after {
+  content: "\e627";
+  position: absolute;
+  font-family: "icon" !important;
+  top: 0;
+  right: 0;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content {
+  padding: .133333rem 0;
+  line-height: .533333rem;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_imgs > img {
+  float: left;
+  width: 2.4rem;
+  height: 1.866667rem;
+  margin-right: .266667rem;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_imgs > img:nth-of-type(3n) {
+  margin-right: 0;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_imgs > img:nth-of-type(n+4) {
+  margin-top: .266667rem;
+}
+.today_push_box .today_push_item_info_content_box .today_push_item_info_content_transpond {
+  margin-top: .266667rem;
+  background-color: #169bd5;
+  color: #fff;
+  width: 7.733333rem;
+  line-height: .8rem;
+  text-align: center;
+  border-radius: .133333rem;
+}
